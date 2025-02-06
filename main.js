@@ -28,4 +28,32 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 document.addEventListener('DOMContentLoaded',initApp)
-document.getElementById('date').innerHTML=new Date().getFullYear()
+document.getElementById("date").innerHTML = new Date().getFullYear();
+
+
+     
+// Toggle desktop dropdown
+const departmentsDropdownButton = document.getElementById('departments-dropdown-button');
+const departmentsDropdown = document.getElementById('departments-dropdown');
+
+departmentsDropdownButton.addEventListener('click', () => {
+  departmentsDropdown.classList.toggle('hidden');
+});
+
+// Toggle mobile dropdown
+const mobileDepartmentsDropdownButton = document.getElementById('mobile-departments-dropdown-button');
+const mobileDepartmentsDropdown = document.getElementById('mobile-departments-dropdown');
+
+mobileDepartmentsDropdownButton.addEventListener('click', () => {
+  mobileDepartmentsDropdown.classList.toggle('hidden');
+});
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', (event) => {
+  if (!departmentsDropdownButton.contains(event.target) && !departmentsDropdown.contains(event.target)) {
+    departmentsDropdown.classList.add('hidden');
+  }
+  if (!mobileDepartmentsDropdownButton.contains(event.target) && !mobileDepartmentsDropdown.contains(event.target)) {
+    mobileDepartmentsDropdown.classList.add('hidden');
+  }
+});
