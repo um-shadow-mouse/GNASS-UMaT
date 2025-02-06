@@ -41,18 +41,30 @@ departmentsDropdownButton.addEventListener('click', () => {
 });
 
 // Toggle mobile dropdown
-const mobileDepartmentsDropdownButton = document.getElementById('mobile-departments-dropdown-button');
-const mobileDepartmentsDropdown = document.getElementById('mobile-departments-dropdown');
 
-mobileDepartmentsDropdownButton.addEventListener('click', () => {
-  mobileDepartmentsDropdown.classList.toggle('hidden');
-});
 
 // Close dropdowns when clicking outside
 document.addEventListener('click', (event) => {
   if (!departmentsDropdownButton.contains(event.target) && !departmentsDropdown.contains(event.target)) {
     departmentsDropdown.classList.add('hidden');
   }
+  if (!mobileDepartmentsDropdownButton.contains(event.target) && !mobileDepartmentsDropdown.contains(event.target)) {
+    mobileDepartmentsDropdown.classList.add('hidden');
+  }
+});
+
+// Toggle mobile dropdown
+const mobileDepartmentsDropdownButton = document.getElementById('mobile-departments-dropdown-button');
+const mobileDepartmentsDropdown = document.getElementById('mobile-departments-dropdown');
+
+mobileDepartmentsDropdownButton.addEventListener('click', (event) => {
+  // Prevent the click event from propagating to the document listener
+  event.stopPropagation();
+  mobileDepartmentsDropdown.classList.toggle('hidden');
+});
+
+// Close dropdown when clicking outside
+document.addEventListener('click', (event) => {
   if (!mobileDepartmentsDropdownButton.contains(event.target) && !mobileDepartmentsDropdown.contains(event.target)) {
     mobileDepartmentsDropdown.classList.add('hidden');
   }
