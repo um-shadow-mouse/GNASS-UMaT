@@ -15,7 +15,7 @@
       rel="stylesheet"
     />
     <script src="./main.js" defer></script>
-   
+
     <style>
       .dropdown:hover .dropdown-menu {
         display: block;
@@ -45,57 +45,137 @@
     <header class="bg-yellow-300 text-white sticky top-0 z-10">
       <section class="mx-auto p-1 flex justify-between items-center">
         <div class="flex">
-          <img class="sm:w-10 w-10 mx-1" src="./public/img/Logo.jpg" alt="Logo" id="home" />
+          <img
+            class="sm:w-10 w-10 mx-1"
+            src="./public/img/Logo.jpg"
+            alt="Logo"
+            id="home"
+          />
           <p class="font-bold text-xl sm:text-2xl shadow-3xl">
             <a href="#home">GNAAS- UMAT</a>
           </p>
         </div>
         <div>
-          <button id="hamburger-button" class="text-3xl md:hidden cursor:pointer relative w-8 h-8">
-            <div class="absolute top-4 -mt-0.5 h-1 w-8 rounded bg-white transition-all duration-500 before:absolute before:h-1 before:w-8 before:-translate-x-4 before:-translate-y-3 before:rounded before:bg-white before:transition-all before:duration-500 before:content-[''] after:absolute after:h-1 after:w-8 after:-translate-x-4 after:translate-y-3 after:rounded after:bg-white after:transition-all after:duration-500 after:content-['']"></div>
+          <button
+            id="hamburger-button"
+            class="text-3xl md:hidden cursor:pointer relative w-8 h-8"
+          >
+            <div
+              class="absolute top-4 -mt-0.5 h-1 w-8 rounded bg-white transition-all duration-500 before:absolute before:h-1 before:w-8 before:-translate-x-4 before:-translate-y-3 before:rounded before:bg-white before:transition-all before:duration-500 before:content-[''] after:absolute after:h-1 after:w-8 after:-translate-x-4 after:translate-y-3 after:rounded after:bg-white after:transition-all after:duration-500 after:content-['']"
+            ></div>
           </button>
-    
+
           <!-- Desktop Nav -->
           <nav class="hidden md:block space-x-8 text-xl mx-4" aria-label="main">
-            <a href="#home" class="w-full text-center py-6 hover:opacity-90 font-semibold"><i class="fas fa-home text-lg"></i> Home</a>
-            <a href="#about" class="hover:opacity-90 font-semibold"><i class="fas fa-info-circle text-lg"></i> About Us</a>
-            <a href="#testimonials" class="hover:opacity-90 font-semibold"><i class="fas fa-comments text-lg"></i> Testimonials</a>
-            
+            <a
+              href="#home"
+              class="w-full text-center py-6 hover:opacity-90 font-semibold"
+              ><i class="fas fa-home text-lg"></i> Home</a
+            >
+            <a href="#about" class="hover:opacity-90 font-semibold"
+              ><i class="fas fa-info-circle text-lg"></i> About Us</a
+            >
+            <a href="#testimonials" class="hover:opacity-90 font-semibold"
+              ><i class="fas fa-comments text-lg"></i> Testimonials</a
+            >
+
             <!-- Departments Dropdown -->
             <div class="relative inline-block">
-              <button id="departments-dropdown-button" class="hover:opacity-90 font-semibold focus:outline-none">
-                <i class="fas fa-building text-lg"></i> Departments <i class="fas fa-caret-down"></i>
+              <button
+                id="departments-dropdown-button"
+                class="hover:opacity-90 font-semibold focus:outline-none"
+              >
+                <i class="fas fa-building text-lg"></i> Departments
+                <i class="fas fa-caret-down"></i>
               </button>
-              <div id="departments-dropdown" class="absolute hidden bg-white text-black mt-2 py-2 w-48 rounded-lg shadow-lg">
-                <a href="Adventist Youth.html" class="block px-4 py-2 hover:bg-yellow-400"><i class="fas fa-users text-lg"></i>Adventist Youth</a>
-                <a href="#" class="block px-4 py-2 hover:bg-yellow-400"><i class="fas fa-book-bible text-lg"></i> Sabbath School</a>
-                <a href="#" class="block px-4 py-2 hover:bg-yellow-400"><i class="fas fa-music text-lg"></i> Music Department</a>
+              <div
+                id="departments-dropdown"
+                class="absolute hidden bg-white text-black mt-2 py-2 w-48 rounded-lg shadow-lg"
+              >
+                <a
+                  href="Adventist Youth.html"
+                  class="block px-4 py-2 hover:bg-yellow-400"
+                  ><i class="fas fa-users text-lg"></i>Adventist Youth</a
+                >
+                <a href="#" class="block px-4 py-2 hover:bg-yellow-400"
+                  ><i class="fas fa-book-bible text-lg"></i> Sabbath School</a
+                >
+                <a href="#" class="block px-4 py-2 hover:bg-yellow-400"
+                  ><i class="fas fa-music text-lg"></i> Music Department</a
+                >
               </div>
             </div>
+            <a
+              href="./form.html"
+              class="w-full text-center py-6 hover:opacity-90 font-semibold"
+              ><i class="fa-user-plus text-lg"></i> Register</a
+            >
+
           </nav>
         </div>
       </section>
-    
+
       <!-- Mobile Navbar -->
-      <section id="mobile-menu" class="top-68 justify-center absolute hidden w-full origin-top animate-open-menu flex-col bg-black text-5xl">
-        <nav class="flex flex-col min-h-screen items-center py-8" aria-label="mobile">
-          <a href="#home" class="w-full text-center py-6 hover:bg-gray-700 hover:opacity-90"><i class="fas fa-home sm:text-xl"></i> Home</a>
-          <a href="#about" class="w-full text-center hover:bg-gray-700 py-6 hover:opacity-90"><i class="fas fa-info-circle sm:text-xl"></i> About Us</a>
-          <a href="#testimonials" class="w-full text-center hover:bg-gray-700 py-6 hover:opacity-90"><i class="fas fa-comments sm:text-xl"></i> Testimonials</a>
-          
+      <section
+        id="mobile-menu"
+        class="top-68 justify-center absolute hidden w-full origin-top animate-open-menu flex-col bg-black text-5xl"
+      >
+        <nav
+          class="flex flex-col min-h-screen items-center py-8"
+          aria-label="mobile"
+        >
+          <a
+            href="#home"
+            class="w-full text-center py-6 hover:bg-gray-700 hover:opacity-90"
+            ><i class="fas fa-home sm:text-lg"></i> Home</a
+          >
+          <a
+            href="#about"
+            class="w-full text-center hover:bg-gray-700 py-6 hover:opacity-90"
+            ><i class="fas fa-info-circle sm:text-lg"></i> About Us</a
+          >
+          <a
+            href="#testimonials"
+            class="w-full text-center hover:bg-gray-700 py-6 hover:opacity-90"
+            ><i class="fas fa-comments sm:text-lg"></i> Testimonials</a
+          >
+
           <!-- Departments Dropdown for Mobile -->
           <div class="w-full text-center">
-            <button id="mobile-departments-dropdown-button" class="w-full py-6 hover:bg-gray-700 hover:opacity-90 focus:outline-none">
-              <i class="fas fa-building sm:text-xl"></i> Departments <i class="fas fa-caret-down"></i>
+            <button
+              id="mobile-departments-dropdown-button"
+              class="w-full py-6 hover:bg-gray-700 hover:opacity-90 focus:outline-none"
+            >
+              <i class="fas fa-building sm:text-lg"></i> Departments
+              <i class="fas fa-caret-down"></i>
             </button>
-            <div id="mobile-departments-dropdown" class="hidden bg-gray-800 text-white w-full">
-              <a href="Adventist Youth.html" class="block py-4 hover:bg-gray-700 mb-10">Adventist Youth</a>
-              <a href="#" class="block py-4 hover:bg-gray-700">Sabbath School</a>
-              <a href="#" class="block py-4 hover:bg-gray-700">Music</a>
+            <div
+              id="mobile-departments-dropdown"
+              class="hidden bg-gray-800 text-white w-2/3"
+            >
+              <a
+                href="Adventist Youth.html"
+                class="block py-4 hover:bg-gray-700 mb-10"
+                >Adventist Youth</a
+              >
+              <a href="Sabbath school.html" class="block py-8 hover:bg-gray-700"
+                >Sabbath School</a
+              >
+              <a href="Music.html" class="block py-4 hover:bg-gray-700">Music</a>
             </div>
           </div>
-          
-          <a href="#footer" class="w-full text-center hover:bg-gray-700 py-6 hover:opacity-90"><i class="fas fa-phone sm:text-xl"></i> Contact Us</a>
+
+          <a
+          href="./form.html"
+          class="w-full text-center hover:bg-gray-700 py-6 hover:opacity-90"
+          ><i class=" "></i> Register</a
+        >
+
+          <a
+            href="#footer"
+            class="w-full text-center hover:bg-gray-700 py-6 hover:opacity-90"
+            ><i class="fas fa-phone "></i> Contact Us</a
+          >
         </nav>
       </section>
     </header>
@@ -109,11 +189,7 @@
             >GNAAS<span class="text-white font-bold">-</span>UMAT</span
           >
           <br />
-          <button
-            class="mt-10 bg-teal-700 hover:bg-green-200 focus:outline-none active:bg-teal-500 text-white py-2 px-4 rounded-xl text-2xl sm:text-3xl uppercase tracking-wider font-semibold"
-          >
-            <p id="contact"><a href="./form.html">Tap to Register</a></p>
-          </button>
+
         </p>
       </section>
       <hr class="mx-auto w-1/2 bg-black" />
@@ -129,13 +205,11 @@
           class="widescreen:section-min-height tallscreen:section-min-height mb-12 flex scroll-mt-40 flex-col-reverse items-center justify-center gap-8 p-6 sm:flex-row"
         >
           <article class="sm:w-1/2">
-            <h2
+            <p
               class="max-w-md text-center text-4xl font-bold text-black sm:text-left sm:text-5xl"
             >
-              We Boldy Go
-              <span class="text-indigo-700">Where No Rocket</span>
-              Has Gone Before...
-            </h2>
+            GNAAS- UMAT
+          </p>
             <p
               class="mt-4 max-w-md text-center text-2xl text-black sm:text-left"
             >
@@ -156,6 +230,63 @@
         </section>
       </div>
       <hr class="mx-auto w-1/2 bg-black" />
+
+      <!-- Our Leaders -->
+     
+      <section id="#about" class="widescreen:section-min-height tallscreen:section-min-height scroll-mt-20 p-6">
+        <h2 class="mb-6 text-center text-4xl font-bold text-slate-900  sm:text-5xl">
+          Our Leaders
+        </h2>
+        <ul class="mx-auto my-12 flex list-none flex-col items-center gap-8 sm:flex-row ">
+          <li
+            class="flex w-2/3 flex-col items-center rounded-3xl border border-solid border-slate-900 bg-white py-6 px-2 shadow-xl  sm:w-5/6">
+            <img src="./favicon.jpg" alt="President Picture" class="mb-6 w-1/2" />
+            <h3 class="text-center text-3xl text-slate-900">
+              Name
+            </h3>
+           
+            <p class="mt-2 text-center text-2xl text-slate-500 ">
+              President
+            </p>
+          </li>
+          <li
+            class="flex w-2/3 flex-col items-center rounded-3xl border border-solid border-slate-900 bg-white py-6 px-2 shadow-xl  sm:w-5/6">
+            <img src="./favicon.jpg" alt="Vice President Picture" class="mb-6 w-1/2" />
+            <h3 class="text-center text-3xl text-slate-900 ">
+              Name
+            </h3>
+           
+            <p class="mt-2 text-center text-2xl text-slate-500">
+              Vice President
+            </p>
+          </li>
+          <li
+            class="flex w-2/3 flex-col items-center rounded-3xl border border-solid border-slate-900 bg-white py-6 px-2 shadow-xl  sm:w-5/6">
+            <img src="./favicon.jpg" alt="Vice President Picture" class="mb-6 w-1/2" />
+            <h3 class="text-center text-3xl text-slate-900 ">
+              Name
+            </h3>
+           
+            <p class="mt-2 text-center text-2xl text-slate-500">
+              Chaplain
+            </p>
+          </li>
+          <li
+          class="flex w-2/3 flex-col items-center rounded-3xl border border-solid border-slate-900 bg-white py-6 px-2 shadow-xl  sm:w-5/6">
+          <img src="./favicon.jpg" alt="Vice President Picture" class="mb-6 w-1/2" />
+          <h3 class="text-center text-3xl text-slate-900 ">
+            Name
+          </h3>
+         
+          <p class="mt-2 text-center text-2xl text-slate-500">
+            Chaplain
+          </p>
+        </li>
+
+        </ul>
+      </section>
+  
+
 
       <!-- Testimonies -->
 

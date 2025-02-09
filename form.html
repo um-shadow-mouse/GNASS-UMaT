@@ -38,7 +38,6 @@
             id="hamburger-button"
             class="text-3xl md:hidden cursor:pointer relative w-8 h-8"
           >
-            <!-- &#9776; -->
             <div
               class="absolute top-4 -mt-0.5 h-1 w-8 rounded bg-white transition-all duration-500 before:absolute before:h-1 before:w-8 before:-translate-x-4 before:-translate-y-3 before:rounded before:bg-white before:transition-all before:duration-500 before:content-[''] after:absolute after:h-1 after:w-8 after:-translate-x-4 after:translate-y-3 after:rounded after:bg-white after:transition-all after:duration-500 after:content-['']"
             ></div>
@@ -47,39 +46,40 @@
           <!-- Desktop Nav -->
           <nav class="hidden md:block space-x-8 text-xl mx-4" aria-label="main">
             <a
-              href="./index.html" id="home"
+              href="#home"
               class="w-full text-center py-6 hover:opacity-90 font-semibold"
               ><i class="fas fa-home text-lg"></i> Home</a
             >
-            <a href="./index.html"  class="hover:opacity-90 font-semibold"
+            <a href="#about" class="hover:opacity-90 font-semibold"
               ><i class="fas fa-info-circle text-lg"></i> About Us</a
             >
-            <a href="./index.html" class="hover:opacity-90 font-semibold">
-              <i class="fas fa-comments text-lg"></i> Testimonials</a
+            <a href="#testimonials" class="hover:opacity-90 font-semibold"
+              ><i class="fas fa-comments text-lg"></i> Testimonials</a
             >
-            <div class="relative inline-block dropdown">
-              <a href="./index.html" class="hover:opacity-90 font-semibold"
-                ><i class="fas fa-building text-lg"></i> Department
-                <i class="fas fa-caret-down"></i
-              ></a>
+
+            <!-- Departments Dropdown -->
+            <div class="relative inline-block">
+              <button
+                id="departments-dropdown-button"
+                class="hover:opacity-90 font-semibold focus:outline-none"
+              >
+                <i class="fas fa-building text-lg"></i> Departments
+                <i class="fas fa-caret-down"></i>
+              </button>
               <div
-                class="absolute hidden bg-gray-300 text-black pt-1 dropdown-menu"
+                id="departments-dropdown"
+                class="absolute hidden bg-white text-black mt-2 py-2 w-48 rounded-lg shadow-lg"
               >
                 <a
-                  href="./Adventist Youth Ministries.html"
+                  href="Adventist Youth.html"
                   class="block px-4 py-2 hover:bg-yellow-400"
-                  ><i class="fas fa-users text-lg"></i> Adventist Youth
-                  Ministries</a
+                  ><i class="fas fa-users text-lg"></i>Adventist Youth</a
                 >
-                <a
-                  href="#music department"
-                  class="block px-4 py-2 hover:bg-yellow-400"
-                  ><i class="fas fa-music text-lg"></i> Music Department</a
-                >
-                <a
-                  href="#sabbath school"
-                  class="block px-4 py-2 hover:bg-yellow-400"
+                <a href="#" class="block px-4 py-2 hover:bg-yellow-400"
                   ><i class="fas fa-book-bible text-lg"></i> Sabbath School</a
+                >
+                <a href="#" class="block px-4 py-2 hover:bg-yellow-400"
+                  ><i class="fas fa-music text-lg"></i> Music Department</a
                 >
               </div>
             </div>
@@ -92,9 +92,6 @@
         id="mobile-menu"
         class="top-68 justify-center absolute hidden w-full origin-top animate-open-menu flex-col bg-black text-5xl"
       >
-        <!-- <button class="text-8xl self-end px-6">
-                &times;
-            </button> -->
         <nav
           class="flex flex-col min-h-screen items-center py-8"
           aria-label="mobile"
@@ -102,50 +99,47 @@
           <a
             href="./index.html"
             class="w-full text-center py-6 hover:bg-gray-700 hover:opacity-90"
-            ><i class="fas fa-home sm:text-xl"></i> Home</a
+            ><i class="fas fa-home sm:text-lg"></i> Home</a
+          >
+          <a
+            href="./index.html "
+            class="w-full text-center hover:bg-gray-700 py-6 hover:opacity-90"
+            ><i class="fas fa-info-circle sm:text-lg"></i> About Us</a
           >
           <a
             href="./index.html"
             class="w-full text-center hover:bg-gray-700 py-6 hover:opacity-90"
+            ><i class="fas fa-comments sm:text-lg"></i> Testimonials</a
           >
-            <i class="fas fa-info-circle sm:text-xl"></i> About Us</a
-          >
-          <a
-            href="./index.html"
-            class="w-full text-center hover:bg-gray-700 py-6 hover:opacity-90"
-            ><i class="fas fa-comments sm:text-xl"></i> Testimonials</a
-          >
-          <div class="relative inline-block w-full text-center dropdown py-6">
-            <p class="w-full text-center py-6 hover:opacity-90 cursor-pointer">
-              <i class="fas fa-building sm:text-xl"></i> Department
+
+          <!-- Departments Dropdown for Mobile -->
+          <div class="w-full text-center">
+            <button
+              id="mobile-departments-dropdown-button"
+              class="w-full py-6 hover:bg-gray-700 hover:opacity-90 focus:outline-none"
+            >
+              <i class="fas fa-building sm:text-lg"></i> Departments
               <i class="fas fa-caret-down"></i>
-            </p>
+            </button>
             <div
-              class="absolute hidden bg-black text-white pt-3 w-full dropdown-menu"
+              id="mobile-departments-dropdown"
+              class="hidden bg-gray-800 text-white w-2/3"
             >
               <a
-                href="./Adventist Youth Ministries.html"
-                class="block px-4 py-2 hover:bg-gray-700 text-2xl mt-2"
-                ><i class="fas fa-users text-lg"></i> Adventist Youth
-                Ministries</a
+                href="Adventist Youth.html"
+                class="block py-4 hover:bg-gray-700 mb-10"
+                >Adventist Youth</a
               >
-              <a
-                href="#music department"
-                class="block px-4 py-2 hover:bg-gray-700 text-2xl mt-2"
-                ><i class="fas fa-music text-lg"></i> Music Department</a
+              <a href="Sabbath school.html" class="block py-8 hover:bg-gray-700"
+                >Sabbath School</a
               >
-              <a
-                href="#sabbath school"
-                class="block px-4 py-2 hover:bg-gray-700 text-2xl mt-2"
-              >
-                <i class="fas fa-book-bible text-lg"></i> Sabbath School</a
-              >
+              <a href="Music.html" class="block py-4 hover:bg-gray-700">Music</a>
             </div>
           </div>
           <a
             href="#footer"
             class="w-full text-center hover:bg-gray-700 py-6 hover:opacity-90"
-            ><i class="fas fa-phone sm:text-xl"></i> Contact Us</a
+            ><i class="fas fa-phone "></i> Contact Us</a
           >
         </nav>
       </section>
