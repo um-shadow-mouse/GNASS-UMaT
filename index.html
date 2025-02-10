@@ -24,9 +24,9 @@
       .welcome-section {
         display: flex;
         justify-content: center;
-        background-image: url(./public/img/Banner.jpg);
+        background-image: url(./public/img/hero2.jpg);
         align-items: center;
-        height: 60vh; /* Adjust height as needed */
+        height: 70vh; /* Adjust height as needed */
         background-size: cover; /* Ensures the image covers the section */
         background-position: center; /* Centers the image */
         background-repeat: no-repeat; /* Prevents repetition of the image */
@@ -39,6 +39,10 @@
         /* background: transparent; */
         opacity: 2;
       }
+
+      .small-font {
+        font-size: 2.5rem; /* Adjust the font size as needed */
+      }
     </style>
   </head>
   <body id="home">
@@ -46,7 +50,7 @@
       <section class="mx-auto p-1 flex justify-between items-center">
         <div class="flex">
           <img
-            class="sm:w-10 w-10 mx-1 "
+            class="sm:w-10 w-10 mx-1"
             src="./public/gnumatlogo.png"
             alt="Logo"
             id="home"
@@ -85,7 +89,7 @@
                 id="departments-dropdown-button"
                 class="hover:opacity-90 font-semibold focus:outline-none"
               >
-                <i class="fas fa-building text-lg"></i> Departments
+                <i class="fas fa-church text-lg"></i> Church Hub
                 <i class="fas fa-caret-down"></i>
               </button>
               <div
@@ -93,15 +97,17 @@
                 class="absolute hidden bg-white text-black mt-2 py-2 w-48 rounded-lg shadow-lg"
               >
                 <a
-                  href="Adventist Youth.html"
+                  href="#leaders"
                   class="block px-4 py-2 hover:bg-yellow-400"
-                  ><i class="fas fa-users text-lg"></i>Adventist Youth</a
+                  ><i class="fas fa-user-group text-lg"></i>Our Leaders</a
                 >
-                <a href="#" class="block px-4 py-2 hover:bg-yellow-400"
-                  ><i class="fas fa-book-bible text-lg"></i> Sabbath School</a
+                <a
+                  href="#stat"
+                  class="block px-4 py-2 hover:bg-yellow-400"
+                  ><i class="fas fa-chart-pie text-lg"></i>Church Statistics</a
                 >
-                <a href="#" class="block px-4 py-2 hover:bg-yellow-400"
-                  ><i class="fas fa-music text-lg"></i> Music Department</a
+                <a href="#gallery" class="block px-4 py-2 hover:bg-yellow-400"
+                  ><i class="fas fa-images text-lg"></i> Gallery</a
                 >
               </div>
             </div>
@@ -110,7 +116,6 @@
               class="w-full text-center py-6 hover:opacity-90 font-semibold"
               ><i class="fas fa-user-plus text-lg"></i> Register</a
             >
-
           </nav>
         </div>
       </section>
@@ -140,41 +145,43 @@
             ><i class="fas fa-comments sm:text-lg"></i> Testimonials</a
           >
 
-          <!-- Departments Dropdown for Mobile -->
           <div class="w-full text-center">
             <button
               id="mobile-departments-dropdown-button"
               class="w-full py-6 hover:bg-gray-700 hover:opacity-90 focus:outline-none"
             >
-              <i class="fas fa-building sm:text-lg"></i> Departments
+              <i class="fas fa-building sm:text-lg"></i> Church Hub
               <i class="fas fa-caret-down"></i>
             </button>
             <div
               id="mobile-departments-dropdown"
-              class="hidden bg-gray-800 text-white w-2/3"
+              class="hidden bg-gray-800 text-white w-2/3 small-font"
             >
               <a
-                href="Adventist Youth.html"
-                class="block py-4 hover:bg-gray-700 mb-10"
-                >Adventist Youth</a
+                href="#leaders"
+                class="block px-4 py-2 hover:bg-yellow-400"
+                ><i class="fas fa-user-group text-md"></i> Our Leaders</a
               >
-              <a href="Sabbath school.html" class="block py-8 hover:bg-gray-700"
-                >Sabbath School</a
+              <a
+                href="#stat"
+                class="block px-4 py-2 hover:bg-yellow-400"
+                ><i class="fas fa-chart-pie text-md"></i> Church Statistics</a
               >
-              <a href="Music.html" class="block py-4 hover:bg-gray-700">Music</a>
+              <a href="#gallery" class="block px-4 py-2 hover:bg-yellow-400"
+                ><i class="fas fa-images text-md"></i> Gallery</a
+              >
             </div>
           </div>
-
           <a
-          href="./form.html"
-          class="w-full text-center hover:bg-gray-700 py-6 hover:opacity-90"
-          ><i class="fas fa-user-plus "></i> Register</a
-        >
+            href="./form.html"
+            class="w-full text-center hover:bg-gray-700 py-6 hover:opacity-90"
+            ><i class="fas fa-user-plus"></i> Register</a
+          >
 
           <a
             href="#footer"
             class="w-full text-center hover:bg-gray-700 py-6 hover:opacity-90"
-            ><i class="fas fa-phone "></i> Contact Us</a
+            ><i class="fas fa-phone"></i> Contact Us</a
           >
         </nav>
       </section>
@@ -189,7 +196,6 @@
             >GNAAS<span class="text-white font-bold">-</span>UMAT</span
           >
           <br />
-
         </p>
       </section>
       <hr class="mx-auto w-1/2 bg-black" />
@@ -205,17 +211,13 @@
           class="widescreen:section-min-height tallscreen:section-min-height mb-12 flex scroll-mt-40 flex-col-reverse items-center justify-center gap-8 p-6 sm:flex-row"
         >
           <article class="sm:w-1/2">
-            <p
-              class="max-w-md text-center text-4xl font-bold text-black sm:text-left sm:text-5xl"
-            >
-            GNAAS- UMAT
-          </p>
+            <p class="max-w-md text-center text-black sm:text-left sm:text-2xl">
+              At <span class="font-bold">GNAAS-UMaT</span> We cherish timeless
+            </p>
+
             <p
               class="mt-4 max-w-md text-center text-2xl text-black sm:text-left"
-            >
-              We're building rockets for the next century today. From the moon
-              to Mars, Jupiter and beyond...
-            </p>
+            ></p>
             <p
               class="mt-4 max-w-md text-center text-2xl text-black sm:text-left"
             >
@@ -232,61 +234,71 @@
       <hr class="mx-auto w-1/2 bg-black" />
 
       <!-- Our Leaders -->
-     
-      <section id="#about" class="widescreen:section-min-height tallscreen:section-min-height scroll-mt-20 p-6">
-        <h2 class="mb-6 text-center text-4xl font-bold text-slate-900  sm:text-5xl">
+
+      <section
+        id="leaders"
+        class="widescreen:section-min-height tallscreen:section-min-height scroll-mt-20 p-6"
+      >
+        <h2
+          class="mb-6 text-center text-4xl font-bold text-slate-900 sm:text-5xl"
+        >
           Our Leaders
         </h2>
-        <ul class="mx-auto my-12 flex list-none flex-col items-center gap-8 sm:flex-row ">
+        <ul
+          class="mx-auto my-12 flex list-none flex-col items-center gap-8 sm:flex-row"
+        >
           <li
-            class="flex w-2/3 flex-col items-center rounded-3xl border border-solid border-slate-900 bg-white py-6 px-2 shadow-xl  sm:w-5/6">
-            <img src="./favicon.jpg" alt="President Picture" class="mb-6 w-1/2" />
-            <h3 class="text-center text-3xl text-slate-900">
-              Name
-            </h3>
-           
-            <p class="mt-2 text-center text-2xl text-slate-500 ">
-              President
-            </p>
+            class="flex w-2/3 flex-col items-center rounded-3xl border border-solid border-slate-900 bg-white py-6 px-2 shadow-xl sm:w-5/6"
+          >
+            <img
+              src="./favicon.jpg"
+              alt="President Picture"
+              class="mb-6 w-1/2"
+            />
+            <h3 class="text-center text-3xl text-slate-900">Name</h3>
+
+            <p class="mt-2 text-center text-2xl text-slate-500">President</p>
           </li>
           <li
-            class="flex w-2/3 flex-col items-center rounded-3xl border border-solid border-slate-900 bg-white py-6 px-2 shadow-xl  sm:w-5/6">
-            <img src="./favicon.jpg" alt="Vice President Picture" class="mb-6 w-1/2" />
-            <h3 class="text-center text-3xl text-slate-900 ">
-              Name
-            </h3>
-           
+            class="flex w-2/3 flex-col items-center rounded-3xl border border-solid border-slate-900 bg-white py-6 px-2 shadow-xl sm:w-5/6"
+          >
+            <img
+              src="./favicon.jpg"
+              alt="Vice President Picture"
+              class="mb-6 w-1/2"
+            />
+            <h3 class="text-center text-3xl text-slate-900">Name</h3>
+
             <p class="mt-2 text-center text-2xl text-slate-500">
               Vice President
             </p>
           </li>
           <li
-            class="flex w-2/3 flex-col items-center rounded-3xl border border-solid border-slate-900 bg-white py-6 px-2 shadow-xl  sm:w-5/6">
-            <img src="./favicon.jpg" alt="Vice President Picture" class="mb-6 w-1/2" />
-            <h3 class="text-center text-3xl text-slate-900 ">
-              Name
-            </h3>
-           
-            <p class="mt-2 text-center text-2xl text-slate-500">
-              Chaplain
-            </p>
+            class="flex w-2/3 flex-col items-center rounded-3xl border border-solid border-slate-900 bg-white py-6 px-2 shadow-xl sm:w-5/6"
+          >
+            <img
+              src="./favicon.jpg"
+              alt="Vice President Picture"
+              class="mb-6 w-1/2"
+            />
+            <h3 class="text-center text-3xl text-slate-900">Name</h3>
+
+            <p class="mt-2 text-center text-2xl text-slate-500">Secertary</p>
           </li>
           <li
-          class="flex w-2/3 flex-col items-center rounded-3xl border border-solid border-slate-900 bg-white py-6 px-2 shadow-xl  sm:w-5/6">
-          <img src="./favicon.jpg" alt="Vice President Picture" class="mb-6 w-1/2" />
-          <h3 class="text-center text-3xl text-slate-900 ">
-            Name
-          </h3>
-         
-          <p class="mt-2 text-center text-2xl text-slate-500">
-            Chaplain
-          </p>
-        </li>
+            class="flex w-2/3 flex-col items-center rounded-3xl border border-solid border-slate-900 bg-white py-6 px-2 shadow-xl sm:w-5/6"
+          >
+            <img
+              src="./favicon.jpg"
+              alt="Vice President Picture"
+              class="mb-6 w-1/2"
+            />
+            <h3 class="text-center text-3xl text-slate-900">Name</h3>
 
+            <p class="mt-2 text-center text-2xl text-slate-500">Chaplain</p>
+          </li>
         </ul>
       </section>
-  
-
 
       <!-- Testimonies -->
 
@@ -393,10 +405,10 @@
             <i class="fas fa-comments text-lg"></i> Testimonials</a
           >
           <a
-          href="./form.html"
-          class="w-full text-center py-6 hover:opacity-90 font-semibold"
-          ><i class="fas fa-user-plus text-lg"></i> Register</a
-        >
+            href="./form.html"
+            class="w-full text-center py-6 hover:opacity-90 font-semibold"
+            ><i class="fas fa-user-plus text-lg"></i> Register</a
+          >
 
           <a href="#" class="hover:opacity-90 font-semibold">Follow us on:#</a>
         </nav>
