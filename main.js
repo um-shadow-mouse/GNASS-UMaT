@@ -69,3 +69,30 @@ document.addEventListener('click', (event) => {
     mobileDepartmentsDropdown.classList.add('hidden');
   }
 });
+
+    // Function to animate counting
+    function animateCount(elementId, targetNumber, duration) {
+      const element = document.getElementById(elementId);
+      let startTime = null;
+
+      function updateCount(timestamp) {
+        if (!startTime) startTime = timestamp;
+        const progress = timestamp - startTime;
+        const increment = Math.floor((progress / duration) * targetNumber);
+
+        if (increment < targetNumber) {
+          element.textContent = increment;
+          requestAnimationFrame(updateCount);
+        } else {
+          element.textContent = targetNumber;
+        }
+      }
+
+      requestAnimationFrame(updateCount);
+    }
+
+    // Start counting animations
+    animateCount("count1", 100, 2000); // Count to 100 in 2 seconds
+    animateCount("count2", 200, 3000); // Count to 200 in 3 seconds
+    animateCount("count3", 300, 4000); // Count to 300 in 4 seconds
+    animateCount("count4", 400, 5000); // Count to 400 in 5 seconds
