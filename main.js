@@ -96,3 +96,18 @@ document.addEventListener('click', (event) => {
     animateCount("count2", 200, 3000); // Count to 200 in 3 seconds
     animateCount("count3", 300, 4000); // Count to 300 in 4 seconds
     animateCount("count4", 400, 5000); // Count to 400 in 5 seconds
+//Gallery
+    const images = document.querySelectorAll('.gallery-img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    
+    images.forEach(img => {
+        img.addEventListener('click', () => {
+            lightboxImg.src = img.src;
+            lightbox.classList.remove('hidden');
+        });
+    });
+    
+    lightbox.addEventListener('click', () => {
+        lightbox.classList.add('hidden');
+    });

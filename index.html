@@ -45,7 +45,7 @@
       }
 
       .small-font {
-        font-size: 2.5rem; /* Adjust the font size as needed */
+        font-size: 2rem; /* Adjust the font size as needed */
       }
     </style>
   </head>
@@ -155,7 +155,7 @@
             </button>
             <div
               id="mobile-departments-dropdown"
-              class="hidden bg-gray-800 text-white w-2/3 small-font"
+              class="hidden  text-white w-full small-font" 
             >
               <a href="#leaders" class="block px-4 py-2 hover:bg-yellow-400"
                 ><i class="fas fa-user-group text-md"></i> Our Leaders</a
@@ -197,7 +197,7 @@
       <hr class="mx-auto w-1/2 bg-black" />
 
       <!-- ABOUT -->
-      <section class="bg-gray-100 mt-10 mb-10 py-12">
+      <section id="about" class="bg-gray-100 mt-10 mb-10 py-12">
         <div class="container mx-auto px-4">
           <h2 class="text-4xl font-bold text-center mb-8">About Us</h2>
           <div class="text-center mb-12">
@@ -327,7 +327,7 @@
       <hr class="mx-auto w-1/2 bg-black mt-5" />
 
       <!-- Church Statistics -->
-      <section class="container mx-auto p-8 bg-gray-100 mt-10">
+      <section id="stat" class="container mx-auto p-8 bg-gray-100 mt-10">
         <h1 class="text-4xl font-bold text-center mb-12">
           Church Population
         </h1>
@@ -422,9 +422,25 @@
           </figure>
         </section>
       </div>
+
+      <!-- Gallery -->
+      <div class="container mx-auto">
+        <h1 class="text-3xl font-bold text-center mb-5">Image Gallery</h1>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <img src="./public/img/Logo.jpg" class="gallery-img rounded-lg shadow-md cursor-pointer">
+            <img src="./public/img/Logo.jpg" class="gallery-img rounded-lg shadow-md cursor-pointer">
+            <img src="./public/img/Logo.jpg" class="gallery-img rounded-lg shadow-md cursor-pointer">
+            <img src="./public/img/Logo.jpg" class="gallery-img rounded-lg shadow-md cursor-pointer">
+        </div>
+    </div>
+     <!-- Lightbox Modal -->
+     <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-75 hidden flex justify-center items-center">
+      <img id="lightbox-img" class="max-w-full max-h-full rounded-lg">
+  </div>
+  <hr class="mx-auto w-1/2 bg-black mt-10 mb-10" />
     </main>
 
-    <hr class="mx-auto w-1/2 bg-black" />
+    
 
     <!-- footer -->
     <footer id="footer" class="bg-teal-700 text-white text-xl mt-10">
