@@ -1,152 +1,99 @@
-const initApp = () => {
-    const hamburgerBtn = document.getElementById('hamburger-button')
-    const mobileMenu = document.getElementById('mobile-menu')
-
-    const toggleMenu = () => {
-        mobileMenu.classList.toggle('hidden')
-        mobileMenu.classList.toggle('flex')
-        hamburgerBtn.classList.toggle('toggle-btn')
-    }
-
-    hamburgerBtn.addEventListener('click', toggleMenu)
-    mobileMenu.addEventListener('click', toggleMenu)
-}
-
-// document.addEventListener('DOMContentLoaded', function() {
-//     document.querySelectorAll('.dropdown').forEach(dropdown => {
-//       dropdown.addEventListener('click', function() {
-//         this.querySelector('.dropdown-menu').classList.toggle('hidden');
-//       });
-//     });
-//   });
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.dropdown').forEach(dropdown => {
-    dropdown.addEventListener('click', function(event) {
-      event.preventDefault();
-      this.querySelector('.dropdown-menu').classList.toggle('hidden');
+document.addEventListener('DOMContentLoaded', () => {
+  // Hamburger menu toggle
+  const hamburgerBtn = document.getElementById('hamburger-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (hamburgerBtn && mobileMenu) {
+    hamburgerBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      mobileMenu.classList.toggle('hidden');
+      mobileMenu.classList.toggle('flex');
     });
-  });
-});
-document.addEventListener('DOMContentLoaded',initApp)
-document.getElementById("date").innerHTML = new Date().getFullYear();
-
-
-     
-// Toggle desktop dropdown
-const departmentsDropdownButton = document.getElementById('departments-dropdown-button');
-const departmentsDropdown = document.getElementById('departments-dropdown');
-
-departmentsDropdownButton.addEventListener('click', () => {
-  departmentsDropdown.classList.toggle('hidden');
-});
-
-// Toggle mobile dropdown
-
-
-// Close dropdowns when clicking outside
-document.addEventListener('click', (event) => {
-  if (!departmentsDropdownButton.contains(event.target) && !departmentsDropdown.contains(event.target)) {
-    departmentsDropdown.classList.add('hidden');
-  }
-  if (!mobileDepartmentsDropdownButton.contains(event.target) && !mobileDepartmentsDropdown.contains(event.target)) {
-    mobileDepartmentsDropdown.classList.add('hidden');
-  }
-});
-
-// Toggle mobile dropdown
-const mobileDepartmentsDropdownButton = document.getElementById('mobile-departments-dropdown-button');
-const mobileDepartmentsDropdown = document.getElementById('mobile-departments-dropdown');
-
-mobileDepartmentsDropdownButton.addEventListener('click', (event) => {
-  // Prevent the click event from propagating to the document listener
-  event.stopPropagation();
-  mobileDepartmentsDropdown.classList.toggle('hidden');
-});
-
-// Close dropdown when clicking outside
-document.addEventListener('click', (event) => {
-  if (!mobileDepartmentsDropdownButton.contains(event.target) && !mobileDepartmentsDropdown.contains(event.target)) {
-    mobileDepartmentsDropdown.classList.add('hidden');
-  }
-});
-
-    // Function to animate counting
-    function animateCount(elementId, targetNumber, duration) {
-      const element = document.getElementById(elementId);
-      let startTime = null;
-
-      function updateCount(timestamp) {
-        if (!startTime) startTime = timestamp;
-        const progress = timestamp - startTime;
-        const increment = Math.floor((progress / duration) * targetNumber);
-
-        if (increment < targetNumber) {
-          element.textContent = increment;
-          requestAnimationFrame(updateCount);
-        } else {
-          element.textContent = targetNumber;
+    // Prevent closing when clicking inside mobile menu
+    mobileMenu.addEventListener('click', (e) => e.stopPropagation());
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      mobileMenu.classList.remove('flex');
+    });
+    // Close mobile menu and scroll to section on link click
+    document.querySelectorAll('#mobile-menu a[href^="#"]').forEach(link => {
+      link.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href');
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('flex');
+        // Smooth scroll to section
+        const section = document.querySelector(targetId);
+        if (section) {
+          setTimeout(() => {
+            section.scrollIntoView({ behavior: 'smooth' });
+          }, 200); // Wait for menu to close
         }
-      }
+      });
+    });
+  }
 
-      requestAnimationFrame(updateCount);
+  // Dropdowns (desktop & mobile)
+  [
+    { btn: 'departments-dropdown-button', menu: 'departments-dropdown' },
+    { btn: 'register-dropdown-button', menu: 'register-dropdown' },
+    { btn: 'mobile-departments-dropdown-button', menu: 'mobile-departments-dropdown' },
+    { btn: 'mobile-register-dropdown-button', menu: 'mobile-register-dropdown' }
+  ].forEach(({ btn, menu }) => {
+    const button = document.getElementById(btn);
+    const dropdown = document.getElementById(menu);
+    if (button && dropdown) {
+      button.addEventListener('click', (e) => {
+        e.stopPropagation();
+        dropdown.classList.toggle('hidden');
+      });
+      dropdown.addEventListener('click', (e) => e.stopPropagation());
+      document.addEventListener('click', () => dropdown.classList.add('hidden'));
     }
+  });
 
-    // Start counting animations
-    animateCount("count1", 100, 2000); // Count to 100 in 2 seconds
-    animateCount("count2", 200, 3000); // Count to 200 in 3 seconds
-    animateCount("count3", 300, 4000); // Count to 300 in 4 seconds
-    animateCount("count4", 400, 5000); // Count to 400 in 5 seconds
-//Gallery
-    const images = document.querySelectorAll('.gallery-img');
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    
+  // Set current year in footer
+  const dateEl = document.getElementById('date');
+  if (dateEl) dateEl.textContent = new Date().getFullYear();
+
+  // Gallery Lightbox
+  const images = document.querySelectorAll('.gallery-img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  if (images && lightbox && lightboxImg) {
     images.forEach(img => {
-        img.addEventListener('click', () => {
-            lightboxImg.src = img.src;
-            lightbox.classList.remove('hidden');
-        });
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.classList.remove('hidden');
+      });
     });
-    
     lightbox.addEventListener('click', () => {
-        lightbox.classList.add('hidden');
+      lightbox.classList.add('hidden');
     });
+  }
 
-    // Desktop Register Dropdown
-  document.addEventListener('DOMContentLoaded', function () {
-    // Desktop Register Dropdown
-    const registerBtn = document.getElementById('register-dropdown-button');
-    const registerDropdown = document.getElementById('register-dropdown');
-    if (registerBtn && registerDropdown) {
-      registerBtn.addEventListener('click', function (e) {
-        e.stopPropagation();
-        registerDropdown.classList.toggle('hidden');
-      });
-      document.addEventListener('click', function (e) {
-        if (!registerDropdown.classList.contains('hidden')) {
-          registerDropdown.classList.add('hidden');
-        }
-      });
-      registerDropdown.addEventListener('click', function (e) {
-        e.stopPropagation();
-      });
+  // Animate church statistics counting
+  function animateCount(elementId, targetNumber, duration) {
+    const element = document.getElementById(elementId);
+    let startTime = null;
+
+    function updateCount(timestamp) {
+      if (!startTime) startTime = timestamp;
+      const progress = timestamp - startTime;
+      const increment = Math.floor((progress / duration) * targetNumber);
+
+      if (increment < targetNumber) {
+        element.textContent = increment;
+        requestAnimationFrame(updateCount);
+      } else {
+        element.textContent = targetNumber;
+      }
     }
 
-    // Mobile Register Dropdown
-    const mobileRegisterBtn = document.getElementById('mobile-register-dropdown-button');
-    const mobileRegisterDropdown = document.getElementById('mobile-register-dropdown');
-    if (mobileRegisterBtn && mobileRegisterDropdown) {
-      mobileRegisterBtn.addEventListener('click', function (e) {
-        e.stopPropagation();
-        mobileRegisterDropdown.classList.toggle('hidden');
-      });
-      document.addEventListener('click', function (e) {
-        if (!mobileRegisterDropdown.classList.contains('hidden')) {
-          mobileRegisterDropdown.classList.add('hidden');
-        }
-      });
-      mobileRegisterDropdown.addEventListener('click', function (e) {
-        e.stopPropagation();
-      });
-    }
-  });
+    requestAnimationFrame(updateCount);
+  }
+
+  animateCount("count1", 100, 2000);
+  animateCount("count2", 200, 3000);
+  animateCount("count3", 300, 4000);
+  animateCount("count4", 400, 5000);
+});

@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.3/dist/tailwind.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+
   <script src="./main.js" defer></script>
 
   <style>
@@ -17,152 +19,137 @@
       display: block;
     }
 
+    /* ...existing code... */
     .welcome-section {
       display: flex;
       justify-content: center;
-      background-image: url(./public/img/hero2.jpg);
       align-items: center;
       height: 70vh;
-      /* Adjust height as needed */
+      background-image: url(./public/img/hero2.jpg);
       background-size: cover;
-      /* Ensures the image covers the section */
       background-position: center;
-      /* Centers the image */
       background-repeat: no-repeat;
-      /* Prevents repetition of the image */
       background-attachment: fixed;
-      /* Makes the background fixed while scrolling */
       color: white;
       text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-      /* Improves text contrast */
       font-size: 2rem;
       font-weight: bold;
       text-align: center;
       /* background: transparent; */
-      opacity: 2;
+      opacity: 1;
+      /* Use 1 for proper opacity */
     }
 
     .small-font {
       font-size: 2rem;
       /* Adjust the font size as needed */
     }
+
+    /* ...existing code... */
   </style>
 </head>
 
 <body id="home">
-  <header class="bg-yellow-300 text-white sticky top-0 z-10">
-    <section class="mx-auto p-1 flex justify-between items-center">
-      <div class="flex">
-        <img class="sm:w-10 w-10 mx-1" src="./public/gnumatlogo.png" alt="Logo" id="home" />
-        <p class="font-bold text-xl sm:text-2xl shadow-3xl">
-          <a href="#home">GNAAS- UMAT</a>
+  <header class="bg-yellow-300 text-white sticky top-0 z-20 shadow-lg">
+    <section class="container mx-auto flex justify-between items-center py-2 px-4">
+      <div class="flex items-center gap-2">
+        <img class="w-10 h-10 rounded-full shadow-lg" src="./public/gnumatlogo.png" alt="GNAAS-UMAT Logo" />
+        <p class="font-extrabold text-2xl tracking-tight">
+          <a href="#home" class="hover:text-teal-700 transition">GNAAS-UMAT</a>
         </p>
       </div>
-      <div>
-        <button id="hamburger-button" class="text-3xl md:hidden cursor:pointer relative w-8 h-8">
-          <div
-            class="absolute top-4 -mt-0.5 h-1 w-8 rounded bg-white transition-all duration-500 before:absolute before:h-1 before:w-8 before:-translate-x-4 before:-translate-y-3 before:rounded before:bg-white before:transition-all before:duration-500 before:content-[''] after:absolute after:h-1 after:w-8 after:-translate-x-4 after:translate-y-3 after:rounded after:bg-white after:transition-all after:duration-500 after:content-['']">
-          </div>
-        </button>
-
-        <!-- Desktop Nav -->
-        <nav class="hidden md:block space-x-8 text-xl mx-4" aria-label="main">
-          <a href="#home" class="w-full text-center py-6 hover:opacity-90 font-semibold"><i
-              class="fas fa-home text-lg"></i> Home</a>
-          <a href="#about" class="hover:opacity-90 font-semibold"><i class="fas fa-info-circle text-lg"></i> About
-            Us</a>
-          <a href="#testimonials" class="hover:opacity-90 font-semibold"><i class="fas fa-comments text-lg"></i>
-            Testimonials</a>
-
-          <!-- Departments Dropdown -->
-          <div class="relative inline-block">
-            <button id="departments-dropdown-button" class="hover:opacity-90 font-semibold focus:outline-none">
-              <i class="fas fa-church text-lg"></i> Church Hub
-              <i class="fas fa-caret-down"></i>
-            </button>
-            <div id="departments-dropdown"
-              class="absolute hidden bg-white text-black mt-2 py-2 w-48 rounded-lg shadow-lg">
-              <a href="#leaders" class="block px-4 py-2 hover:bg-yellow-400"><i
-                  class="fas fa-user-group text-lg"></i>Our Leaders</a>
-              <a href="#stat" class="block px-4 py-2 hover:bg-yellow-400"><i class="fas fa-chart-pie text-lg"></i>Church
-                Statistics</a>
-              <a href="#gallery" class="block px-4 py-2 hover:bg-yellow-400"><i class="fas fa-images text-lg"></i>
-                Gallery</a>
-            </div>
-
-          </div>
-          <!-- Register Dropdown (Desktop) -->
-          <div class="relative inline-block">
-            <button id="register-dropdown-button" class="hover:opacity-90 font-semibold focus:outline-none">
-              <i class="fas fa-user-plus text-lg"></i> Register
-              <i class="fas fa-caret-down"></i>
-            </button>
-            <div id="register-dropdown" class="absolute hidden bg-white text-black mt-2 py-2 w-48 rounded-lg shadow-lg">
-              <a href="#register" class="block px-4 py-2 hover:bg-yellow-400"><i
-                  class="fas fa-user-group text-lg"></i>Current Student</a>
-              <a href="#stat" class="block px-4 py-2 hover:bg-yellow-400"><i
-                  class="fas fa-chart-pie text-lg"></i>Alumni</a>
-            </div>
-          </div>
-
-
-
-          
-        </nav>
-      </div>
-    </section>
-
-    <!-- Mobile Navbar -->
-    <section id="mobile-menu"
-      class="top-68 justify-center absolute hidden w-full origin-top animate-open-menu flex-col bg-black text-5xl">
-      <nav class="flex flex-col min-h-screen items-center py-8" aria-label="mobile">
-        <a href="#home" class="w-full text-center py-6 hover:bg-gray-700 hover:opacity-90"><i
-            class="fas fa-home sm:text-lg"></i> Home</a>
-        <a href="#about" class="w-full text-center hover:bg-gray-700 py-6 hover:opacity-90"><i
-            class="fas fa-info-circle sm:text-lg"></i> About Us</a>
-        <a href="#testimonials" class="w-full text-center hover:bg-gray-700 py-6 hover:opacity-90"><i
-            class="fas fa-comments sm:text-lg"></i> Testimonials</a>
-
-        <div class="w-full text-center">
-          <button id="mobile-departments-dropdown-button"
-            class="w-full py-6 hover:bg-gray-700 hover:opacity-90 focus:outline-none">
-            <i class="fas fa-church sm:text-lg"></i> Church Hub
-            <i class="fas fa-caret-down"></i>
+      <!-- Hamburger for mobile -->
+      <button id="hamburger-button" class="text-3xl md:hidden focus:outline-none" aria-label="Open menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-8 text-lg font-semibold" aria-label="main navigation">
+        <a href="#home" class="hover:text-teal-700 transition"><i class="fas fa-home"></i> Home</a>
+        <a href="#about" class="hover:text-teal-700 transition"><i class="fas fa-info-circle"></i> About Us</a>
+        <a href="#testimonials" class="hover:text-teal-700 transition"><i class="fas fa-comments"></i> Testimonials</a>
+        <!-- Departments Dropdown -->
+        <div class="relative dropdown">
+          <button id="departments-dropdown-button"
+            class="hover:text-teal-700 transition flex items-center gap-1 focus:outline-none">
+            <i class="fas fa-church"></i> Church Hub <i class="fas fa-caret-down"></i>
           </button>
-          <div id="mobile-departments-dropdown" class="hidden  text-white w-full small-font">
-            <a href="#leaders" class="block px-4 py-2 hover:bg-yellow-400"><i class="fas fa-user-group text-md"></i> Our
-              Leaders</a>
-            <a href="#stat" class="block px-4 py-2 hover:bg-yellow-400"><i class="fas fa-chart-pie text-md"></i> Church
-              Statistics</a>
-            <a href="#gallery" class="block px-4 py-2 hover:bg-yellow-400"><i class="fas fa-images text-md"></i>
+          <div id="departments-dropdown"
+            class="dropdown-menu absolute hidden bg-white text-black mt-2 py-2 w-52 rounded-lg shadow-lg z-30">
+            <a href="#leaders" class="block px-4 py-2 hover:bg-yellow-300 transition"><i class="fas fa-user-group"></i>
+              Our Leaders</a>
+            <a href="#stat" class="block px-4 py-2 hover:bg-yellow-300 transition"><i class="fas fa-chart-pie"></i>
+              Church Statistics</a>
+            <a href="#gallery" class="block px-4 py-2 hover:bg-yellow-300 transition"><i class="fas fa-images"></i>
               Gallery</a>
           </div>
         </div>
-
-        <!-- Register dropdown mobile -->
-        <div class="w-full text-center">
-          <button id="mobile-register-dropdown-button"
-            class="w-full py-6 hover:bg-gray-700 hover:opacity-90 focus:outline-none">
-            <i class="fas fa-user-plus sm:text-lg"></i> Register
-            <i class="fas fa-caret-down"></i>
+        <!-- Register Dropdown -->
+        <div class="relative dropdown">
+          <button id="register-dropdown-button"
+            class="hover:text-teal-700 transition flex items-center gap-1 focus:outline-none">
+            <i class="fas fa-user-plus"></i> Register <i class="fas fa-caret-down"></i>
           </button>
-          <div id="mobile-register-dropdown" class="hidden text-white w-full small-font">
-            <a href="#leaders" class="block px-4 py-2 hover:bg-yellow-400"><i
-                class="fas fa-user-group text-md"></i>Current Member</a>
-            <a href="#stat" class="block px-4 py-2 hover:bg-yellow-400"><i class="fas fa-user-plus text-md"></i>
+          <div id="register-dropdown"
+            class="dropdown-menu absolute hidden bg-white text-black mt-2 py-2 w-52 rounded-lg shadow-lg z-30">
+            <a href="#register" class="block px-4 py-2 hover:bg-yellow-300 transition"><i class="fas fa-user-group"></i>
+              Current Student</a>
+            <a href="#stat" class="block px-4 py-2 hover:bg-yellow-300 transition"><i class="fas fa-chart-pie"></i>
               Alumni</a>
           </div>
         </div>
-
-
-        <!-- <a
-            href="./form.html"
-            class="w-full text-center hover:bg-gray-700 py-6 hover:opacity-90"
-            ><i class="fas fa-user-plus"></i> Register</a
-          > -->
-
-        <a href="#footer" class="w-full text-center hover:bg-gray-700 py-6 hover:opacity-90"><i
-            class="fas fa-phone"></i> Contact Us</a>
+      </nav>
+    </section>
+    <!-- Mobile Navbar -->
+    <section id="mobile-menu"
+      class="absolute top-16 left-0 w-full hidden flex-col bg-teal-700 text-white z-40 animate__animated animate__fadeInDown rounded-b-3xl shadow-2xl font-sans">
+      <nav class="flex flex-col min-h-screen items-center py-8 gap-4" aria-label="mobile navigation">
+        <a href="#home"
+          class="w-full text-center py-4 text-2xl font-bold hover:bg-yellow-400 hover:text-teal-900 transition-all duration-300 animate__animated animate__fadeInLeft">
+          <i class="fas fa-home mr-2"></i> Home
+        </a>
+        <a href="#about"
+          class="w-full text-center py-4 text-2xl font-bold hover:bg-yellow-400 hover:text-teal-900 transition-all duration-300 animate__animated animate__fadeInLeft">
+          <i class="fas fa-info-circle mr-2"></i> About Us
+        </a>
+        <a href="#testimonials"
+          class="w-full text-center py-4 text-2xl font-bold hover:bg-yellow-400 hover:text-teal-900 transition-all duration-300 animate__animated animate__fadeInLeft">
+          <i class="fas fa-comments mr-2"></i> Testimonials
+        </a>
+        <div class="w-full text-center">
+          <button id="mobile-departments-dropdown-button"
+            class="w-full py-4 text-2xl font-bold hover:bg-yellow-400 hover:text-teal-900 transition-all duration-300 focus:outline-none animate__animated animate__fadeInLeft">
+            <i class="fas fa-church mr-2"></i> Church Hub <i class="fas fa-caret-down"></i>
+          </button>
+          <div id="mobile-departments-dropdown" class="hidden text-white w-full small-font">
+            <a href="#leaders"
+              class="block px-4 py-2 text-lg font-semibold hover:bg-yellow-400 hover:text-teal-900 rounded transition-all duration-200"><i
+                class="fas fa-user-group mr-2"></i> Our Leaders</a>
+            <a href="#stat"
+              class="block px-4 py-2 text-lg font-semibold hover:bg-yellow-400 hover:text-teal-900 rounded transition-all duration-200"><i
+                class="fas fa-chart-pie mr-2"></i> Church Statistics</a>
+            <a href="#gallery"
+              class="block px-4 py-2 text-lg font-semibold hover:bg-yellow-400 hover:text-teal-900 rounded transition-all duration-200"><i
+                class="fas fa-images mr-2"></i> Gallery</a>
+          </div>
+        </div>
+        <div class="w-full text-center">
+          <button id="mobile-register-dropdown-button"
+            class="w-full py-4 text-2xl font-bold hover:bg-yellow-400 hover:text-teal-900 transition-all duration-300 focus:outline-none animate__animated animate__fadeInLeft">
+            <i class="fas fa-user-plus mr-2"></i> Register <i class="fas fa-caret-down"></i>
+          </button>
+          <div id="mobile-register-dropdown" class="hidden text-white w-full small-font">
+            <a href="#register"
+              class="block px-4 py-2 text-lg font-semibold hover:bg-yellow-400 hover:text-teal-900 rounded transition-all duration-200"><i
+                class="fas fa-user-group mr-2"></i> Current Member</a>
+            <a href="#stat"
+              class="block px-4 py-2 text-lg font-semibold hover:bg-yellow-400 hover:text-teal-900 rounded transition-all duration-200"><i
+                class="fas fa-user-plus mr-2"></i> Alumni</a>
+          </div>
+        </div>
+        <a href="#footer"
+          class="w-full text-center py-4 text-2xl font-bold hover:bg-yellow-400 hover:text-teal-900 transition-all duration-300 animate__animated animate__fadeInLeft">
+          <i class="fas fa-phone mr-2"></i> Contact Us
+        </a>
       </nav>
     </section>
   </header>
@@ -170,75 +157,83 @@
   <!-- Main Body -->
   <main id="home">
     <section class="welcome-section">
-      <p class="font-bold text-4xl sm:text-7xl">
+      <p class="font-extrabold text-4xl sm:text-7xl tracking-tight">
         WELCOME TO
         <span class="text-teal-200">GNAAS<span class="text-white font-bold">-</span>UMAT</span>
-        <br />
       </p>
     </section>
     <hr class="mx-auto w-1/2 bg-black" />
 
     <!-- ABOUT -->
-    <section id="about" class="bg-gray-100 mt-10 mb-10 py-12">
+    <section id="about"
+      class="bg-gradient-to-br from-teal-50 via-gray-100 to-yellow-50 mt-10 mb-10 py-16 rounded-3xl shadow-xl fade-in">
       <div class="container mx-auto px-4">
-        <h2 class="text-4xl font-bold text-center mb-8">About Us</h2>
+        <h2 class="text-4xl font-extrabold text-center mb-10 text-teal-800 tracking-tight">
+          <i class="fas fa-info-circle text-yellow-400 mr-2"></i>
+          About Us
+        </h2>
         <div class="text-center mb-12">
-          <p class="text-xl text-gray-700">
-            Welcome to the University of Mines and Technology,Ghana National Association of Adventist students Chapter
-            <span class="italic">GNAAS-UMaT</span>! We are a dynamic community of students dedicated to fostering
+          <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+            Welcome to the University of Mines and Technology, Ghana National Association of Adventist Students Chapter
+            <span class="italic font-semibold text-teal-700">GNAAS-UMaT</span>! We are a dynamic community of students
+            dedicated to fostering
             spiritual growth, academic excellence, and service to others in accordance with the teachings of Jesus
             Christ.
           </p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-          <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-            <i class="fas fa-cross text-4xl text-teal-500 mb-4"></i>
-            <h3 class="text-2xl font-semibold mb-2">Our Mission</h3>
+          <div
+            class="bg-white p-8 rounded-2xl shadow-lg text-center hover:shadow-2xl transition-shadow duration-300 group">
+            <i class="fas fa-cross text-4xl text-teal-500 mb-4 group-hover:text-yellow-400 transition"></i>
+            <h3 class="text-2xl font-bold mb-2 text-teal-800">Our Mission</h3>
             <p class="text-gray-600">
               To glorify God by nurturing a spiritually vibrant and academically empowered community of students who
               live out the principles of the Seventh-day Adventist faith.
             </p>
           </div>
-
-          <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-            <i class="fas fa-bible text-4xl text-teal-500 mb-4"></i>
-            <h3 class="text-2xl font-semibold mb-2">Weekly Worship & Bible Study</h3>
+          <div
+            class="bg-white p-8 rounded-2xl shadow-lg text-center hover:shadow-2xl transition-shadow duration-300 group">
+            <i class="fas fa-bible text-4xl text-teal-500 mb-4 group-hover:text-yellow-400 transition"></i>
+            <h3 class="text-2xl font-bold mb-2 text-teal-800">Weekly Worship & Bible Study</h3>
             <p class="text-gray-600">
               Strengthen your faith through engaging discussions and uplifting worship.
             </p>
           </div>
-          <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-            <i class="fas fa-praying-hands text-4xl text-teal-500 mb-4"></i>
-            <h3 class="text-2xl font-semibold mb-2">Prayer Meetings</h3>
+          <div
+            class="bg-white p-8 rounded-2xl shadow-lg text-center hover:shadow-2xl transition-shadow duration-300 group">
+            <i class="fas fa-praying-hands text-4xl text-teal-500 mb-4 group-hover:text-yellow-400 transition"></i>
+            <h3 class="text-2xl font-bold mb-2 text-teal-800">Prayer Meetings</h3>
             <p class="text-gray-600">
               Join us as we seek God’s guidance in our personal and academic lives.
             </p>
           </div>
-          <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-            <i class="fas fa-hands-helping text-4xl text-teal-500 mb-4"></i>
-            <h3 class="text-2xl font-semibold mb-2">Community Service</h3>
+          <div
+            class="bg-white p-8 rounded-2xl shadow-lg text-center hover:shadow-2xl transition-shadow duration-300 group">
+            <i class="fas fa-hands-helping text-4xl text-teal-500 mb-4 group-hover:text-yellow-400 transition"></i>
+            <h3 class="text-2xl font-bold mb-2 text-teal-800">Community Service</h3>
             <p class="text-gray-600">
               Participate in outreach programs to impact lives beyond our campus.
             </p>
           </div>
-          <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-            <i class="fas fa-users text-4xl text-teal-500 mb-4"></i>
-            <h3 class="text-2xl font-semibold mb-2">Social & Networking Events</h3>
+          <div
+            class="bg-white p-8 rounded-2xl shadow-lg text-center hover:shadow-2xl transition-shadow duration-300 group">
+            <i class="fas fa-users text-4xl text-teal-500 mb-4 group-hover:text-yellow-400 transition"></i>
+            <h3 class="text-2xl font-bold mb-2 text-teal-800">Social & Networking Events</h3>
             <p class="text-gray-600">
               Connect with fellow Adventists and build lasting relationships.
             </p>
           </div>
-          <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-            <i class="fas fa-chalkboard-teacher text-4xl text-teal-500 mb-4"></i>
-            <h3 class="text-2xl font-semibold mb-2">Mentorship & Discipleship</h3>
+          <div
+            class="bg-white p-8 rounded-2xl shadow-lg text-center hover:shadow-2xl transition-shadow duration-300 group">
+            <i class="fas fa-chalkboard-teacher text-4xl text-teal-500 mb-4 group-hover:text-yellow-400 transition"></i>
+            <h3 class="text-2xl font-bold mb-2 text-teal-800">Mentorship & Discipleship</h3>
             <p class="text-gray-600">
               Grow in your spiritual and academic journey with the support of experienced mentors.
             </p>
           </div>
         </div>
         <div class="text-center mt-12">
-          <p class="text-xl text-gray-700">
+          <p class="text-xl text-gray-700 max-w-2xl mx-auto">
             We welcome all students, whether lifelong Adventists or those simply curious to learn more about our faith.
             Join us as we grow together in Christ and shine His light on our campus!
           </p>
@@ -248,128 +243,191 @@
     <hr class="mx-auto w-1/2 bg-black" />
 
     <!-- Our Leaders -->
-
     <section id="leaders"
-      class="bg-gray-100 widescreen:section-min-height tallscreen:section-min-height scroll-mt-20 p-6 mt-10">
-      <h2 class="mb-6 text-center text-4xl font-bold text-slate-900 sm:text-5xl">
+      class="bg-gradient-to-br from-teal-50 via-gray-100 to-yellow-100 widescreen:section-min-height tallscreen:section-min-height scroll-mt-20 p-6 mt-10 rounded-3xl shadow-xl fade-in">
+      <h2
+        class="mb-10 text-center text-4xl font-extrabold text-teal-800 tracking-tight sm:text-5xl animate-fade-in-down">
+        <i class="fas fa-users text-yellow-400 mr-2"></i>
         Our Leaders
       </h2>
-      <ul class="mx-auto my-12 flex list-none flex-col items-center gap-8 sm:flex-row">
+      <ul class="mx-auto my-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl">
         <li
-          class="flex w-2/3 flex-col items-center rounded-3xl border border-solid border-slate-900 bg-white py-6 px-2 shadow-xl sm:w-5/6">
-          <img src="./favicon.jpg" alt="President Picture" class="mb-6 w-1/2" />
-          <h3 class="text-center text-3xl text-slate-900">Name</h3>
-
-          <p class="mt-2 text-center text-2xl text-slate-500">President</p>
+          class="flex flex-col items-center rounded-3xl border border-teal-200 bg-white py-8 px-4 shadow-lg hover:shadow-2xl transition-shadow duration-300 group">
+          <div class="relative">
+            <img src="./favicon.jpg" alt="President Picture"
+              class="mb-6 w-32 h-32 object-cover rounded-full border-4 border-yellow-300 shadow-lg group-hover:scale-105 transition-transform duration-300" />
+            <span
+              class="absolute -bottom-3 right-2 bg-yellow-400 text-white px-3 py-1 rounded-full text-xs font-bold shadow">PRES</span>
+          </div>
+          <h3 class="text-center text-2xl font-bold text-slate-900 mt-2">Name</h3>
+          <p class="mt-2 text-center text-xl text-slate-500 font-medium">President</p>
+          <div class="mt-4 flex gap-3">
+            <a href="#" class="text-teal-600 hover:text-yellow-400 transition"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-teal-600 hover:text-yellow-400 transition"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="text-teal-600 hover:text-green-500 transition"><i class="fab fa-whatsapp"></i></a>
+          </div>
         </li>
         <li
-          class="flex w-2/3 flex-col items-center rounded-3xl border border-solid border-slate-900 bg-white py-6 px-2 shadow-xl sm:w-5/6">
-          <img src="./favicon.jpg" alt="Vice President Picture" class="mb-6 w-1/2" />
-          <h3 class="text-center text-3xl text-slate-900">Name</h3>
-
-          <p class="mt-2 text-center text-2xl text-slate-500">
-            Vice President
-          </p>
+          class="flex flex-col items-center rounded-3xl border border-teal-200 bg-white py-8 px-4 shadow-lg hover:shadow-2xl transition-shadow duration-300 group">
+          <div class="relative">
+            <img src="./favicon.jpg" alt="Vice President Picture"
+              class="mb-6 w-32 h-32 object-cover rounded-full border-4 border-yellow-300 shadow-lg group-hover:scale-105 transition-transform duration-300" />
+            <span
+              class="absolute -bottom-3 right-2 bg-yellow-400 text-white px-3 py-1 rounded-full text-xs font-bold shadow">VP</span>
+          </div>
+          <h3 class="text-center text-2xl font-bold text-slate-900 mt-2">Name</h3>
+          <p class="mt-2 text-center text-xl text-slate-500 font-medium">Vice President</p>
+          <div class="mt-4 flex gap-3">
+            <a href="#" class="text-teal-600 hover:text-yellow-400 transition"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-teal-600 hover:text-yellow-400 transition"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="text-teal-600 hover:text-green-500 transition"><i class="fab fa-whatsapp"></i></a>
+          </div>
         </li>
         <li
-          class="flex w-2/3 flex-col items-center rounded-3xl border border-solid border-slate-900 bg-white py-6 px-2 shadow-xl sm:w-5/6">
-          <img src="./favicon.jpg" alt="Vice President Picture" class="mb-6 w-1/2" />
-          <h3 class="text-center text-3xl text-slate-900">Name</h3>
-
-          <p class="mt-2 text-center text-2xl text-slate-500">Secertary</p>
+          class="flex flex-col items-center rounded-3xl border border-teal-200 bg-white py-8 px-4 shadow-lg hover:shadow-2xl transition-shadow duration-300 group">
+          <div class="relative">
+            <img src="./favicon.jpg" alt="Secretary Picture"
+              class="mb-6 w-32 h-32 object-cover rounded-full border-4 border-yellow-300 shadow-lg group-hover:scale-105 transition-transform duration-300" />
+            <span
+              class="absolute -bottom-3 right-2 bg-yellow-400 text-white px-3 py-1 rounded-full text-xs font-bold shadow">SEC</span>
+          </div>
+          <h3 class="text-center text-2xl font-bold text-slate-900 mt-2">Name</h3>
+          <p class="mt-2 text-center text-xl text-slate-500 font-medium">Secretary</p>
+          <div class="mt-4 flex gap-3">
+            <a href="#" class="text-teal-600 hover:text-yellow-400 transition"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-teal-600 hover:text-yellow-400 transition"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="text-teal-600 hover:text-green-500 transition"><i class="fab fa-whatsapp"></i></a>
+          </div>
         </li>
         <li
-          class="flex w-2/3 flex-col items-center rounded-3xl border border-solid border-slate-900 bg-white py-6 px-2 shadow-xl sm:w-5/6">
-          <img src="./favicon.jpg" alt="Vice President Picture" class="mb-6 w-1/2" />
-          <h3 class="text-center text-3xl text-slate-900">Name</h3>
-
-          <p class="mt-2 text-center text-2xl text-slate-500">Chaplain</p>
+          class="flex flex-col items-center rounded-3xl border border-teal-200 bg-white py-8 px-4 shadow-lg hover:shadow-2xl transition-shadow duration-300 group">
+          <div class="relative">
+            <img src="./favicon.jpg" alt="Chaplain Picture"
+              class="mb-6 w-32 h-32 object-cover rounded-full border-4 border-yellow-300 shadow-lg group-hover:scale-105 transition-transform duration-300" />
+            <span
+              class="absolute -bottom-3 right-2 bg-yellow-400 text-white px-3 py-1 rounded-full text-xs font-bold shadow">CHAP</span>
+          </div>
+          <h3 class="text-center text-2xl font-bold text-slate-900 mt-2">Name</h3>
+          <p class="mt-2 text-center text-xl text-slate-500 font-medium">Chaplain</p>
+          <div class="mt-4 flex gap-3">
+            <a href="#" class="text-teal-600 hover:text-yellow-400 transition"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-teal-600 hover:text-yellow-400 transition"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="text-teal-600 hover:text-green-500 transition"><i class="fab fa-whatsapp"></i></a>
+          </div>
         </li>
       </ul>
     </section>
     <hr class="mx-auto w-1/2 bg-black mt-5" />
 
+
     <!-- Church Statistics -->
-    <section id="stat" class="container mx-auto p-8 bg-gray-100 mt-10">
-      <h1 class="text-4xl font-bold text-center mb-12">
-        Church Population
+    <section id="stat"
+      class="container mx-auto p-10 bg-gradient-to-br from-teal-50 via-gray-100 to-yellow-50 mt-12 rounded-3xl shadow-2xl fade-in">
+      <h1 class="text-4xl font-extrabold text-center mb-12 text-teal-800 tracking-tight">
+        <i class="fas fa-chart-bar text-yellow-400 mr-2"></i>
+        Current Church Population
       </h1>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <!-- Section 1: 100 -->
-        <div class="bg-white p-8 rounded-lg shadow-lg text-center">
-          <h2 class="text-2xl font-semibold mb-4">Level 100</h2>
-          <div class="text-6xl font-bold text-blue-600" id="count1">0</div>
-          <p class="text-gray-600 mt-4">Members</p>
+        <div
+          class="bg-white p-8 rounded-2xl shadow-lg text-center border-t-4 border-blue-500 hover:scale-105 transition-transform duration-300 group">
+          <h2 class="text-2xl font-bold mb-2 text-blue-700 flex items-center justify-center gap-2">
+            <i class="fas fa-user-graduate"></i> Level 100
+          </h2>
+          <div class="text-6xl font-extrabold text-blue-600 group-hover:text-blue-800 transition-colors" id="count1">0
+          </div>
+          <p class="text-gray-500 mt-2 text-lg">Members</p>
         </div>
-
         <!-- Section 2: 200 -->
-        <div class="bg-white p-8 rounded-lg shadow-lg text-center">
-          <h2 class="text-2xl font-semibold mb-4">Level 200</h2>
-          <div class="text-6xl font-bold text-green-600" id="count2">0</div>
-          <p class="text-gray-600 mt-4">Members</p>
+        <div
+          class="bg-white p-8 rounded-2xl shadow-lg text-center border-t-4 border-green-500 hover:scale-105 transition-transform duration-300 group">
+          <h2 class="text-2xl font-bold mb-2 text-green-700 flex items-center justify-center gap-2">
+            <i class="fas fa-user-graduate"></i> Level 200
+          </h2>
+          <div class="text-6xl font-extrabold text-green-600 group-hover:text-green-800 transition-colors" id="count2">0
+          </div>
+          <p class="text-gray-500 mt-2 text-lg">Members</p>
         </div>
-
         <!-- Section 3: 300 -->
-        <div class="bg-white p-8 rounded-lg shadow-lg text-center">
-          <h2 class="text-2xl font-semibold mb-4">Level 300</h2>
-          <div class="text-6xl font-bold text-purple-600" id="count3">0</div>
-          <p class="text-gray-600 mt-4">Members</p>
+        <div
+          class="bg-white p-8 rounded-2xl shadow-lg text-center border-t-4 border-purple-500 hover:scale-105 transition-transform duration-300 group">
+          <h2 class="text-2xl font-bold mb-2 text-purple-700 flex items-center justify-center gap-2">
+            <i class="fas fa-user-graduate"></i> Level 300
+          </h2>
+          <div class="text-6xl font-extrabold text-purple-600 group-hover:text-purple-800 transition-colors"
+            id="count3">0</div>
+          <p class="text-gray-500 mt-2 text-lg">Members</p>
         </div>
-
         <!-- Section 4: 400 -->
-        <div class="bg-white p-8 rounded-lg shadow-lg text-center">
-          <h2 class="text-2xl font-semibold mb-4">Level 400</h2>
-          <div class="text-6xl font-bold text-red-600" id="count4">0</div>
-          <p class="text-gray-600 mt-4">Members</p>
+        <div
+          class="bg-white p-8 rounded-2xl shadow-lg text-center border-t-4 border-red-500 hover:scale-105 transition-transform duration-300 group">
+          <h2 class="text-2xl font-bold mb-2 text-red-700 flex items-center justify-center gap-2">
+            <i class="fas fa-user-graduate"></i> Level 400
+          </h2>
+          <div class="text-6xl font-extrabold text-red-600 group-hover:text-red-800 transition-colors" id="count4">0
+          </div>
+          <p class="text-gray-500 mt-2 text-lg">Members</p>
         </div>
       </div>
     </section>
-    <!-- Testimonies -->
-    <div class="bg-gray-200 mt-10 shadow-xl">
+
+    <!-- Testimony -->
+    <div
+      class="bg-gradient-to-br from-teal-100 via-gray-100 to-yellow-100 mt-10 shadow-2xl rounded-3xl px-4 py-6 fade-in">
       <section id="testimonials"
-        class="widescreen:section-min-height tallscreen:section-min-height my-12 scroll-mt-20 p-6">
-        <h2 class="mt-12 text-center text-4xl font-bold text-black sm:text-5xl">
+        class="max-w-4xl mx-auto widescreen:section-min-height tallscreen:section-min-height my-8 scroll-mt-20 p-4">
+        <h2
+          class="mb-6 text-center text-4xl font-extrabold text-teal-800 tracking-tight sm:text-5xl animate-fade-in-down">
+          <i class="fas fa-quote-left text-yellow-400 mr-2"></i>
           Testimonials
+          <i class="fas fa-quote-right text-yellow-400 ml-2"></i>
         </h2>
-        <figure class="my-12">
-          <blockquote class="relative rounded-3xl bg-teal-600 py-12 pl-14 pr-8">
-            <p
-              class="mt-2 text-left text-2xl text-white before:absolute before:top-0 before:left-0 before:translate-x-2 before:translate-y-2 before:transform before:font-serif before:text-9xl before:text-white before:opacity-25 before:content-['\201C'] after:absolute after:-bottom-20 after:right-0 after:-translate-x-2 after:-translate-y-2 after:transform after:font-serif after:text-9xl after:text-white after:opacity-25 after:content-['\201D'] sm:text-3xl">
-              Joining this family has been a life-changing experience. The community is incredibly supportive and
-              welcoming.
-            </p>
-          </blockquote>
-          <figcaption class="mt-2 text-right text-xl italic text-black sm:text-2xl">
-            &#8212;Newton,Level 200.
-          </figcaption>
-        </figure>
-        <figure class="my-12">
-          <blockquote class="relative rounded-3xl bg-teal-600 py-12 pl-14 pr-8">
-            <p
-              class="mt-2 text-left text-2xl text-white before:absolute before:top-0 before:left-0 before:translate-x-2 before:translate-y-2 before:transform before:font-serif before:text-9xl before:text-white before:opacity-25 before:content-['\201C'] after:absolute after:-bottom-20 after:right-0 after:-translate-x-2 after:-translate-y-2 after:transform after:font-serif after:text-9xl after:text-white after:opacity-25 after:content-['\201D'] sm:text-3xl">
-              The sermons are always inspiring and thought-provoking. I feel spiritually nourished every time I attend.
-            </p>
-          </blockquote>
-          <figcaption class="mt-2 text-right text-xl italic text-black sm:text-2xl">
-            &#8212;Blessing,Level 300.
-          </figcaption>
-        </figure>
-        <figure class="my-12">
-          <blockquote class="relative rounded-3xl bg-teal-600 py-12 pl-14 pr-8">
-            <p
-              class="mt-2 text-left text-2xl text-white before:absolute before:top-0 before:left-0 before:translate-x-2 before:translate-y-2 before:transform before:font-serif before:text-9xl before:text-white before:opacity-25 before:content-['\201C'] after:absolute after:-bottom-20 after:right-0 after:-translate-x-2 after:-translate-y-2 after:transform after:font-serif after:text-9xl after:text-white after:opacity-25 after:content-['\201D'] sm:text-3xl">
-              I have found a second family here. The fellowship and friendships I have made are invaluable.
-            </p>
-          </blockquote>
-          <figcaption class="mt-2 text-right text-xl italic text-black sm:text-2xl">
-            &#8212;Manpat,Level 400.
-          </figcaption>
-        </figure>
+        <div class="grid md:grid-cols-3 gap-6">
+          <figure class="relative group transition-transform duration-500 hover:scale-105">
+            <blockquote class="rounded-3xl bg-teal-600 py-8 px-4 shadow-xl relative overflow-hidden">
+              <i class="fas fa-quote-left text-4xl text-yellow-300 absolute top-4 left-4 opacity-30"></i>
+              <p class="mt-2 text-left text-lg text-white font-medium sm:text-xl z-10 relative">
+                The sermons are always <span class="text-yellow-200 font-bold">inspiring</span> and thought-provoking. I
+                feel spiritually nourished every time I attend.
+              </p>
+              <i class="fas fa-quote-right text-4xl text-yellow-300 absolute bottom-4 right-4 opacity-30"></i>
+            </blockquote>
+            <figcaption class="mt-3 text-right text-base italic text-teal-900 font-semibold sm:text-lg">
+              &#8212; Blessing, Level 300
+            </figcaption>
+          </figure>
+          <figure class="relative group transition-transform duration-500 hover:scale-105">
+            <blockquote class="rounded-3xl bg-teal-600 py-8 px-4 shadow-xl relative overflow-hidden">
+              <i class="fas fa-quote-left text-4xl text-yellow-300 absolute top-4 left-4 opacity-30"></i>
+              <p class="mt-2 text-left text-lg text-white font-medium sm:text-xl z-10 relative">
+                I have found a <span class="text-yellow-200 font-bold">second family</span> here. The fellowship and
+                friendships I have made are invaluable.
+              </p>
+              <i class="fas fa-quote-right text-4xl text-yellow-300 absolute bottom-4 right-4 opacity-30"></i>
+            </blockquote>
+            <figcaption class="mt-3 text-right text-base italic text-teal-900 font-semibold sm:text-lg">
+              &#8212; Manpat, Level 400
+            </figcaption>
+          </figure>
+          <!-- Alumni Testimony -->
+          <figure class="relative group transition-transform duration-500 hover:scale-105">
+            <blockquote class="rounded-3xl bg-teal-600 py-8 px-4 shadow-xl relative overflow-hidden">
+              <i class="fas fa-quote-left text-4xl text-yellow-300 absolute top-4 left-4 opacity-30"></i>
+              <p class="mt-2 text-left text-lg text-white font-medium sm:text-xl z-10 relative">
+                As an <span class="text-yellow-200 font-bold">alumnus</span>, I cherish the values and friendships I
+                gained here. GNAAS-UMaT shaped my faith and leadership for life beyond campus.
+              </p>
+              <i class="fas fa-quote-right text-4xl text-yellow-300 absolute bottom-4 right-4 opacity-30"></i>
+            </blockquote>
+            <figcaption class="mt-3 text-right text-base italic text-teal-900 font-semibold sm:text-lg">
+              &#8212; Ama, Alumni
+            </figcaption>
+          </figure>
+        </div>
       </section>
     </div>
-
     <!-- Gallery -->
-    <div class="container mx-auto">
+    <div class="container mx-auto mt-5">
       <h1 class="text-3xl font-bold text-center mb-5">Image Gallery</h1>
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         <img src="./public/img/WhatsApp Image 2025-03-02 at 05.11.37_dbc7e23f.jpg"
@@ -400,7 +458,7 @@
         <p class="mb-1 flex items-center gap-2">
           <i class="fas fa-envelope"></i>
           <span>Email:</span>
-          <a href="mailto:animmichaelasante@gmail.com" class="underline hover:text-yellow-300">animmichaelasante@gmail.com</a>
+          <a href="mailto:example@gmail.com" class="underline hover:text-yellow-300">example@gmail.com</a>
         </p>
         <p class="flex items-center gap-2">
           <i class="fas fa-phone-alt"></i>
@@ -413,12 +471,14 @@
       <nav class="hidden md:flex flex-col gap-2 text-lg mx-8" aria-label="Footer Navigation">
         <a href="#home" class="hover:text-yellow-300 transition"><i class="fas fa-home"></i> Home</a>
         <a href="#about" class="hover:text-yellow-300 transition"><i class="fas fa-info-circle"></i> About Us</a>
-        <a href="#testimonials" class="hover:text-yellow-300 transition"><i class="fas fa-comments"></i> Testimonials</a>
+        <a href="#testimonials" class="hover:text-yellow-300 transition"><i class="fas fa-comments"></i>
+          Testimonials</a>
         <a href="#register" class="hover:text-yellow-300 transition"><i class="fas fa-user-plus"></i> Register</a>
         <div class="flex gap-3 mt-2">
           <a href="#" class="hover:text-yellow-300" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="#" class="hover:text-yellow-300" aria-label="Twitter"><i class="fab fa-tiktok"></i></a>
           <a href="#" class="hover:text-yellow-300" aria-label="Instagram"><i class="fab fa-telegram"></i></a>
+          <a href="#" class="hover:text-yellow-300" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
         </div>
       </nav>
 
@@ -427,6 +487,7 @@
         <a href="#" class="hover:text-yellow-300" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
         <a href="#" class="hover:text-yellow-300" aria-label="Twitter"><i class="fab fa-tiktok"></i></a>
         <a href="#" class="hover:text-yellow-300" aria-label="Instagram"><i class="fab fa-telegram"></i></a>
+        <a href="#" class="hover:text-yellow-300" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
       </div>
 
       <!-- Copyright -->
@@ -443,7 +504,7 @@
     // Set current year in footer
     document.getElementById('date').textContent = new Date().getFullYear();
   </script>
-<!-- ...existing code... -->
+  <!-- ...existing code... -->
 
 </body>
 
