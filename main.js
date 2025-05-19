@@ -111,3 +111,42 @@ document.addEventListener('click', (event) => {
     lightbox.addEventListener('click', () => {
         lightbox.classList.add('hidden');
     });
+
+    // Desktop Register Dropdown
+  document.addEventListener('DOMContentLoaded', function () {
+    // Desktop Register Dropdown
+    const registerBtn = document.getElementById('register-dropdown-button');
+    const registerDropdown = document.getElementById('register-dropdown');
+    if (registerBtn && registerDropdown) {
+      registerBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        registerDropdown.classList.toggle('hidden');
+      });
+      document.addEventListener('click', function (e) {
+        if (!registerDropdown.classList.contains('hidden')) {
+          registerDropdown.classList.add('hidden');
+        }
+      });
+      registerDropdown.addEventListener('click', function (e) {
+        e.stopPropagation();
+      });
+    }
+
+    // Mobile Register Dropdown
+    const mobileRegisterBtn = document.getElementById('mobile-register-dropdown-button');
+    const mobileRegisterDropdown = document.getElementById('mobile-register-dropdown');
+    if (mobileRegisterBtn && mobileRegisterDropdown) {
+      mobileRegisterBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        mobileRegisterDropdown.classList.toggle('hidden');
+      });
+      document.addEventListener('click', function (e) {
+        if (!mobileRegisterDropdown.classList.contains('hidden')) {
+          mobileRegisterDropdown.classList.add('hidden');
+        }
+      });
+      mobileRegisterDropdown.addEventListener('click', function (e) {
+        e.stopPropagation();
+      });
+    }
+  });
