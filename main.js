@@ -86,13 +86,14 @@ document.addEventListener('DOMContentLoaded', () => {
       lightbox.classList.remove('flex');
     });
   }
+// =========================
+// Animate Church Statistics Counting (Looping with 1 min pause)
+// =========================
+function animateCount(elementId, targetNumber, duration) {
+  const element = document.getElementById(elementId);
+  if (!element) return;
 
-  // =========================
-  // Animate Church Statistics Counting
-  // =========================
-  function animateCount(elementId, targetNumber, duration) {
-    const element = document.getElementById(elementId);
-    if (!element) return;
+  function startCounting() {
     let startTime = null;
 
     function updateCount(timestamp) {
@@ -105,13 +106,22 @@ document.addEventListener('DOMContentLoaded', () => {
         requestAnimationFrame(updateCount);
       } else {
         element.textContent = targetNumber;
+        // Wait 1 minute (60000ms), then restart counting
+        setTimeout(() => {
+          element.textContent = 0;
+          requestAnimationFrame(updateCount);
+          startCounting();
+        }, 30000);
       }
     }
 
     requestAnimationFrame(updateCount);
   }
 
-  animateCount("count1", 260, 2000);
+  startCounting();
+}
+
+animateCount("count1", 260, 2000);;
 
   // =========================
   // Leader Image Popup (Modal)
