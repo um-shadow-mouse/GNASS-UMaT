@@ -106,12 +106,11 @@ function animateCount(elementId, targetNumber, duration) {
         requestAnimationFrame(updateCount);
       } else {
         element.textContent = targetNumber;
-        // Wait 1 minute (60000ms), then restart counting
         setTimeout(() => {
           element.textContent = 0;
           requestAnimationFrame(updateCount);
           startCounting();
-        }, 30000);
+        }, 100000);
       }
     }
 
