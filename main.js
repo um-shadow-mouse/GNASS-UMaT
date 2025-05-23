@@ -92,8 +92,27 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(updateCount);
   }
 
-  animateCount("count1", 100, 2000);
-  animateCount("count2", 200, 3000);
-  animateCount("count3", 300, 4000);
-  animateCount("count4", 400, 5000);
+  animateCount("count1", 260, 2000);
+ 
 });
+
+// Leader image popup
+  document.querySelectorAll('.leader-img').forEach(img => {
+    img.addEventListener('click', function () {
+      const modal = document.getElementById('leader-lightbox');
+      const modalImg = document.getElementById('leader-lightbox-img');
+      modalImg.src = this.src;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    });
+  });
+  document.getElementById('leader-lightbox-close').onclick = function () {
+    document.getElementById('leader-lightbox').classList.add('hidden');
+    document.getElementById('leader-lightbox').classList.remove('flex');
+  };
+  document.getElementById('leader-lightbox').onclick = function (e) {
+    if (e.target === this) {
+      this.classList.add('hidden');
+      this.classList.remove('flex');
+    }
+  };
