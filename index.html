@@ -513,76 +513,29 @@
 
 
     <!-- ========== GALLERY SECTION ========== -->
-   <div class="container mx-auto mt-5">
+   <!-- ========== GALLERY SLIDESHOW SECTION ========== -->
+<div id="gallery-slideshow" class="container mx-auto mt-10 max-w-3xl">
   <h1 class="text-3xl font-bold text-center mb-5">Image Gallery</h1>
-  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-    <figure class="relative group overflow-hidden rounded-lg shadow-md">
-      <img src="./Gallery Pictures/WhatsApp Image 2025-03-02 at 05.11.37_dbc7e23f.jpg"
-        class="gallery-img w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer" loading="lazy" alt="Event 1">
-      <figcaption class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent text-white text-sm p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        Outreach Program 2025
-      </figcaption>
-    </figure>
-    <figure class="relative group overflow-hidden rounded-lg shadow-md">
-      <img src="./Gallery Pictures/photo_2025-02-08_13-44-49.jpg"
-        class="gallery-img w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer" loading="lazy" alt="Event 2">
-      <figcaption class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent text-white text-sm p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        Sabbath Worship
-      </figcaption>
-    </figure>
-    <figure class="relative group overflow-hidden rounded-lg shadow-md">
-      <img src="./Gallery Pictures/photo_2024-08-31_22-43-02.jpg"
-        class="gallery-img w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer" loading="lazy" alt="Event 3">
-      <figcaption class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent text-white text-sm p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        Bible Study Night
-      </figcaption>
-    </figure>
-    <figure class="relative group overflow-hidden rounded-lg shadow-md">
-      <img src="./Gallery Pictures/photo_2024-08-25_12-32-43.jpg"
-        class="gallery-img w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer" loading="lazy" alt="Event 4">
-      <figcaption class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent text-white text-sm p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        Social Gathering
-      </figcaption>
-    </figure>
-    <figure class="relative group overflow-hidden rounded-lg shadow-md">
-      <img src="./Gallery Pictures/Rep Your School.jpg"
-        class="gallery-img w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer" loading="lazy" alt="Rep Your School">
-      <figcaption class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent text-white text-sm p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        Rep Your School
-      </figcaption>
-    </figure>
-    <!-- Add more images below as needed -->
-    <figure class="relative group overflow-hidden rounded-lg shadow-md">
-      <img src="./Gallery Pictures/photo_2025-03-10_10-15-00.jpg"
-        class="gallery-img w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer" loading="lazy" alt="Event 5">
-      <figcaption class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent text-white text-sm p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        Choir Ministration
-      </figcaption>
-    </figure>
-    <figure class="relative group overflow-hidden rounded-lg shadow-md">
-      <img src="./Gallery Pictures/photo_2025-03-12_18-30-21.jpg"
-        class="gallery-img w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer" loading="lazy" alt="Event 6">
-      <figcaption class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent text-white text-sm p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        Leadership Seminar
-      </figcaption>
-    </figure>
-    <!-- ...add more as needed... -->
+  <div class="relative rounded-2xl overflow-hidden shadow-2xl bg-black/80">
+    <div id="slideshow-images" class="relative w-full h-72 sm:h-96">
+      <!-- Slides will be injected here by JS -->
+    </div>
+    <!-- Controls -->
+    <button id="slideshow-prev"
+      class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-teal-600 text-white text-3xl rounded-full w-10 h-10 flex items-center justify-center z-20 shadow-lg transition">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <button id="slideshow-next"
+      class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-teal-600 text-white text-3xl rounded-full w-10 h-10 flex items-center justify-center z-20 shadow-lg transition">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+    <!-- Dots -->
+    <div id="slideshow-dots" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20"></div>
+    <!-- Caption -->
+    <div id="slideshow-caption"
+      class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent text-white text-lg sm:text-xl px-6 py-4 font-semibold tracking-wide"></div>
   </div>
 </div>
-    <!-- Lightbox Modal -->
-    <!-- <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-75 hidden flex justify-center items-center">
-      <img id="lightbox-img" class="max-w-full max-h-full rounded-lg">
-    </div> -->
-    <!-- Lightbox Modal -->
-    <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-75 hidden flex justify-center items-center z-50">
-      <button id="lightbox-prev"
-        class="absolute left-4 text-white text-3xl font-bold px-3 py-1 rounded hover:bg-black/30">&lt;</button>
-      <img id="lightbox-img" class="max-w-full max-h-full rounded-lg z-10">
-      <button id="lightbox-next"
-        class="absolute right-4 text-white text-3xl font-bold px-3 py-1 rounded hover:bg-black/30">&gt;</button>
-      <span id="lightbox-counter"
-        class="absolute bottom-4 left-1/2 -translate-x-1/2 text-white bg-black/50 px-3 py-1 rounded text-sm"></span>
-    </div>
     <hr class="mx-auto w-1/2 bg-black mt-10 mb-10" />
   </main>
 
