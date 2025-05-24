@@ -207,12 +207,20 @@ document.addEventListener('DOMContentLoaded', () => {
       caption: "Rep Your School"
     },
     {
-      src: "./Gallery Pictures/photo_2025-03-10_10-15-00.jpg",
-      caption: "Choir Ministration"
+      src: "./Gallery Pictures/More/8.jpg",
+      caption: "Gentlemen's Day"
     },
     {
       src: "./Gallery Pictures/More/4.jpg",
       caption: "Leadership Seminar"
+    },
+    {
+      src: "./Gallery Pictures/More/9.jpg",
+      caption: "Adventist Youth Society"
+    },
+    {
+      src: "./Gallery Pictures/More/10.jpg",
+      caption: "Socialization"
     }
     // Add more slides as needed
   ];
