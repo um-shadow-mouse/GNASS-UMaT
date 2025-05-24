@@ -30,8 +30,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 70vh;
-      background-image: url(./public/img/hero2.jpg);
+      height: 100vh;
+      background-image: url(./public/Hero\ Section.JPG);
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -48,10 +48,7 @@
 
     .small-font {
       font-size: 2rem;
-      /* Adjust the font size as needed */
     }
-
-    /* ...existing code... */
   </style>
 </head>
 
@@ -268,6 +265,24 @@
       </h2>
       <ul class="mx-auto my-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl">
 
+        <!-- Chaplain -->
+        <li
+          class="flex flex-col items-center rounded-3xl border border-teal-200 bg-white py-8 px-4 shadow-lg hover:shadow-2xl transition-shadow duration-300 group">
+          <div class="relative flex justify-center items-center">
+            <img src="./Leaders Pictures/Chaplain.jpg" alt="Chaplain Picture"
+              class="mb-6 w-40 h-40 object-cover rounded-full border-4 border-yellow-300 shadow-lg group-hover:scale-105 transition-transform duration-300 bg-white leader-img"
+              style="object-fit: cover; background: #fff; cursor:pointer;" />
+            <span
+              class="absolute -bottom-3 right-2 bg-yellow-400 text-white px-3 py-1 rounded-full text-xs font-bold shadow">CHAP</span>
+          </div>
+          <h3 class="text-center text-2xl font-bold text-slate-900 mt-2">Pastor Enoch Assan Donkor</h3>
+          <p class="mt-2 text-center text-xl text-slate-500 font-medium">Chaplain</p>
+          <div class="mt-4 flex gap-3">
+            <a href="https://wa.me/+233507483677" class="text-teal-600 hover:text-green-500 transition"><i
+                class="fab fa-whatsapp"></i></a>
+          </div>
+        </li>
+
         <!-- President -->
         <li
           class="flex flex-col items-center rounded-3xl border border-teal-200 bg-white py-8 px-4 shadow-lg hover:shadow-2xl transition-shadow duration-300 group">
@@ -344,11 +359,11 @@
         <li
           class="flex flex-col items-center rounded-3xl border border-teal-200 bg-white py-8 px-4 shadow-lg hover:shadow-2xl transition-shadow duration-300 group">
           <div class="relative flex justify-center items-center">
-            <img src="./Leaders Pictures/Treasurer.jpg" alt="Secretary Picture"
+            <img src="./Leaders Pictures/Treasurer.jpg" alt="Treasurer Picture"
               class="mb-6 w-40 h-40 object-cover rounded-full border-4 border-yellow-300 shadow-lg group-hover:scale-105 transition-transform duration-300 bg-white leader-img"
               style="object-fit: cover; background: #fff; cursor:pointer;" />
             <span
-              class="absolute -bottom-3 right-2 bg-yellow-400 text-white px-3 py-1 rounded-full text-xs font-bold shadow">SEC</span>
+              class="absolute -bottom-3 right-2 bg-yellow-400 text-white px-3 py-1 rounded-full text-xs font-bold shadow">TRE</span>
           </div>
           <h3 class="text-center text-2xl font-bold text-slate-900 mt-2">Elizabeth Teiko</h3>
           <p class="mt-2 text-center text-xl text-slate-500 font-medium">Treasurer</p>
@@ -358,23 +373,24 @@
           </div>
         </li>
 
-        <!-- Chaplain -->
+        <!-- Music Director -->
         <li
           class="flex flex-col items-center rounded-3xl border border-teal-200 bg-white py-8 px-4 shadow-lg hover:shadow-2xl transition-shadow duration-300 group">
           <div class="relative flex justify-center items-center">
-            <img src="./Leaders Pictures/Chaplain.jpg" alt="Chaplain Picture"
+            <img src="./Leaders Pictures/Music Director.jpg" alt="Music Director Picture"
               class="mb-6 w-40 h-40 object-cover rounded-full border-4 border-yellow-300 shadow-lg group-hover:scale-105 transition-transform duration-300 bg-white leader-img"
               style="object-fit: cover; background: #fff; cursor:pointer;" />
             <span
-              class="absolute -bottom-3 right-2 bg-yellow-400 text-white px-3 py-1 rounded-full text-xs font-bold shadow">CHAP</span>
+              class="absolute -bottom-3 right-2 bg-yellow-400 text-white px-3 py-1 rounded-full text-xs font-bold shadow">MD</span>
           </div>
-          <h3 class="text-center text-2xl font-bold text-slate-900 mt-2">Pastor Enoch Assan Donkor</h3>
-          <p class="mt-2 text-center text-xl text-slate-500 font-medium">Chaplain</p>
+          <h3 class="text-center text-2xl font-bold text-slate-900 mt-2">Nyantakyi Afari Patrick</h3>
+          <p class="mt-2 text-center text-xl text-slate-500 font-medium">Music Director</p>
           <div class="mt-4 flex gap-3">
-            <a href="https://wa.me/+233507483677" class="text-teal-600 hover:text-green-500 transition"><i
+            <a href="https://wa.me/+233551635653" class="text-teal-600 hover:text-green-500 transition"><i
                 class="fab fa-whatsapp"></i></a>
           </div>
         </li>
+
       </ul>
     </section>
 
@@ -465,20 +481,35 @@
         </div>
       </section>
     </div>
+
+
     <!-- ========== GALLERY SECTION ========== -->
     <div class="container mx-auto mt-5">
       <h1 class="text-3xl font-bold text-center mb-5">Image Gallery</h1>
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        <img src="./public/img/WhatsApp Image 2025-03-02 at 05.11.37_dbc7e23f.jpg"
+        <img src="./Gallery Pictures/WhatsApp Image 2025-03-02 at 05.11.37_dbc7e23f.jpg"
           class="gallery-img rounded-lg shadow-md cursor-pointer">
-        <img src="./public/img/photo_2025-02-08_13-44-49.jpg" class="gallery-img rounded-lg shadow-md cursor-pointer">
-        <img src="./public/img/photo_2024-08-31_22-43-02.jpg" class="gallery-img rounded-lg shadow-md cursor-pointer">
-        <img src="./public/img/photo_2024-08-25_12-32-43.jpg" class="gallery-img rounded-lg shadow-md cursor-pointer">
+        <img src="./Gallery Pictures/photo_2025-02-08_13-44-49.jpg"
+          class="gallery-img rounded-lg shadow-md cursor-pointer">
+        <img src="./Gallery Pictures/photo_2024-08-31_22-43-02.jpg"
+          class="gallery-img rounded-lg shadow-md cursor-pointer">
+        <img src="./Gallery Pictures/photo_2024-08-25_12-32-43.jpg"
+          class="gallery-img rounded-lg shadow-md cursor-pointer">
       </div>
     </div>
     <!-- Lightbox Modal -->
-    <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-75 hidden flex justify-center items-center">
+    <!-- <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-75 hidden flex justify-center items-center">
       <img id="lightbox-img" class="max-w-full max-h-full rounded-lg">
+    </div> -->
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-75 hidden flex justify-center items-center z-50">
+      <button id="lightbox-prev"
+        class="absolute left-4 text-white text-3xl font-bold px-3 py-1 rounded hover:bg-black/30">&lt;</button>
+      <img id="lightbox-img" class="max-w-full max-h-full rounded-lg z-10">
+      <button id="lightbox-next"
+        class="absolute right-4 text-white text-3xl font-bold px-3 py-1 rounded hover:bg-black/30">&gt;</button>
+      <span id="lightbox-counter"
+        class="absolute bottom-4 left-1/2 -translate-x-1/2 text-white bg-black/50 px-3 py-1 rounded text-sm"></span>
     </div>
     <hr class="mx-auto w-1/2 bg-black mt-10 mb-10" />
   </main>
@@ -496,7 +527,7 @@
         class="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center hover:shadow-2xl transition-shadow duration-300">
         <i class="fas fa-book-open text-4xl text-teal-600 mb-4"></i>
         <h3 class="text-2xl font-bold text-teal-800 mb-2">Sunday - Bible Studies</h3>
-        <p class="text-gray-700 mb-2"><span class="font-semibold">Place:</span> Electrical Lab Basement</p>
+        <p class="text-gray-700 mb-2"><span class="font-semibold">Venue:</span> Electrical Lab Basement</p>
         <p class="text-gray-700 mb-2"><span class="font-semibold">Time:</span> 7:00pm - 8:00pm</p>
         <span
           class="inline-block bg-yellow-200 text-yellow-900 px-3 py-1 rounded-full text-xs font-bold mt-2 hidden">Masterclass</span>

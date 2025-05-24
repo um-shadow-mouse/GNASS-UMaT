@@ -67,60 +67,101 @@ document.addEventListener('DOMContentLoaded', () => {
   if (dateEl) dateEl.textContent = new Date().getFullYear();
 
   // =========================
-  // Gallery Lightbox
+  // Gallery Lightbox Slideshow
   // =========================
-  const images = document.querySelectorAll('.gallery-img');
+  const images = Array.from(document.querySelectorAll('.gallery-img'));
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
-  if (images && lightbox && lightboxImg) {
-    images.forEach(img => {
-      img.addEventListener('click', () => {
-        lightboxImg.src = img.src;
-        lightbox.classList.remove('hidden');
-        lightbox.classList.add('flex');
-      });
-    });
-    // Close lightbox on click
-    lightbox.addEventListener('click', () => {
-      lightbox.classList.add('hidden');
-      lightbox.classList.remove('flex');
-    });
+  const lightboxPrev = document.getElementById('lightbox-prev');
+  const lightboxNext = document.getElementById('lightbox-next');
+  const lightboxCounter = document.getElementById('lightbox-counter');
+  let currentIndex = 0;
+
+  function showLightbox(index) {
+    if (!images[index]) return;
+    currentIndex = index;
+    lightboxImg.src = images[index].src;
+    lightbox.classList.remove('hidden');
+    lightbox.classList.add('flex');
+    if (lightboxCounter) {
+      lightboxCounter.textContent = `${index + 1} / ${images.length}`;
+    }
   }
-// =========================
-// Animate Church Statistics Counting (Looping with 1 min pause)
-// =========================
-function animateCount(elementId, targetNumber, duration) {
-  const element = document.getElementById(elementId);
-  if (!element) return;
 
-  function startCounting() {
-    let startTime = null;
+  if (images.length && lightbox && lightboxImg) {
+    images.forEach((img, idx) => {
+      img.addEventListener('click', () => showLightbox(idx));
+    });
 
-    function updateCount(timestamp) {
-      if (!startTime) startTime = timestamp;
-      const progress = timestamp - startTime;
-      const increment = Math.floor((progress / duration) * targetNumber);
-
-      if (increment < targetNumber) {
-        element.textContent = increment;
-        requestAnimationFrame(updateCount);
-      } else {
-        element.textContent = targetNumber;
-        setTimeout(() => {
-          element.textContent = 0;
-          requestAnimationFrame(updateCount);
-          startCounting();
-        }, 100000);
-      }
+    // Next/Prev button handlers
+    if (lightboxPrev) {
+      lightboxPrev.onclick = (e) => {
+        e.stopPropagation();
+        showLightbox((currentIndex - 1 + images.length) % images.length);
+      };
+    }
+    if (lightboxNext) {
+      lightboxNext.onclick = (e) => {
+        e.stopPropagation();
+        showLightbox((currentIndex + 1) % images.length);
+      };
     }
 
-    requestAnimationFrame(updateCount);
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (lightbox.classList.contains('hidden')) return;
+      if (e.key === 'ArrowLeft') showLightbox((currentIndex - 1 + images.length) % images.length);
+      if (e.key === 'ArrowRight') showLightbox((currentIndex + 1) % images.length);
+      if (e.key === 'Escape') {
+        lightbox.classList.add('hidden');
+        lightbox.classList.remove('flex');
+      }
+    });
+
+    // Close lightbox on click outside image or on modal background
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.classList.add('hidden');
+        lightbox.classList.remove('flex');
+      }
+    });
   }
 
-  startCounting();
-}
+  // =========================
+  // Animate Church Statistics Counting (Looping with 1 min pause)
+  // =========================
+  function animateCount(elementId, targetNumber, duration) {
+    const element = document.getElementById(elementId);
+    if (!element) return;
 
-animateCount("count1", 260, 2000);;
+    function startCounting() {
+      let startTime = null;
+
+      function updateCount(timestamp) {
+        if (!startTime) startTime = timestamp;
+        const progress = timestamp - startTime;
+        const increment = Math.floor((progress / duration) * targetNumber);
+
+        if (increment < targetNumber) {
+          element.textContent = increment;
+          requestAnimationFrame(updateCount);
+        } else {
+          element.textContent = targetNumber;
+          setTimeout(() => {
+            element.textContent = 0;
+            requestAnimationFrame(updateCount);
+            startCounting();
+          }, 100000);
+        }
+      }
+
+      requestAnimationFrame(updateCount);
+    }
+
+    startCounting();
+  }
+
+  animateCount("count1", 260, 2000);
 
   // =========================
   // Leader Image Popup (Modal)
